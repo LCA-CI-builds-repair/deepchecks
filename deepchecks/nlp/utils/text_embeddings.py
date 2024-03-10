@@ -15,6 +15,22 @@ import warnings
 from itertools import islice
 from typing import Optional
 
+def calculate_embeddings(text: str, model: Any) -> Optional[float]:
+    """Calculate the embeddings for a given text using the provided model.
+
+    Args:
+        text (str): The text to calculate the embeddings for.
+        model (Any): The model to use for calculating the embeddings.
+
+    Returns:
+        Optional[float]: The embeddings for the provided text.
+    """
+    try:
+        return model.get_embeddings(text)
+    except Exception as e:
+        warnings.warn(f"Failed to calculate embeddings for text '{text}': {e}")
+        return None
+
 import numpy as np
 from tqdm import tqdm
 
