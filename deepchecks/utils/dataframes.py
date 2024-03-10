@@ -51,6 +51,8 @@ def default_fill_na_series(col: pd.Series, is_cat_column: t.Optional[bool] = Non
     common_values_list = col.mode()
     if isinstance(common_values_list, pd.Series) and len(common_values_list) > 0:
         return col.fillna(common_values_list[0])
+    else:
+        return None
     return None
 
 
