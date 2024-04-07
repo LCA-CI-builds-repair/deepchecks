@@ -149,6 +149,18 @@ def language(
         fasttext_model = get_fasttext_model()
 
     # Predictions are the first prediction (k=1), only if the probability is above the threshold
+def detect_language(text: str, fasttext_model: FastText, lang_certainty_threshold: float) -> Optional[str]:
+    """
+    Detects the language of the given text using the provided FastText model.
+
+    Args:
+        text: The input text.
+        fasttext_model: The FastText model used for detection.
+        lang_certainty_threshold: The threshold for language certainty.
+
+    Returns:
+        The detected language code, or None if the language is uncertain or text is empty.
+    """
     prediction = fasttext_model.predict(text.replace('\n', ' '), k=1, threshold=lang_certainty_threshold)[0]
     # label is empty for detection below threshold:
     language_code = prediction[0].replace('__label__', '') if prediction else None
