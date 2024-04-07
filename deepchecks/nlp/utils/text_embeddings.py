@@ -15,6 +15,14 @@ import warnings
 from itertools import islice
 from typing import Optional
 
+sys.path.append("..")  # Add parent directory to the system path
+
+# Add necessary imports here
+
+# Add function definitions here
+
+# Add code for calculating embeddings here
+
 import numpy as np
 from tqdm import tqdm
 
