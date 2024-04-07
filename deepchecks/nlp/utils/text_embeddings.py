@@ -6,14 +6,16 @@
 # Public License (version 3 or later).
 # You should have received a copy of the GNU Affero General Public License
 # along with Deepchecks.  If not, see <http://www.gnu.org/licenses/>.
+```python
 # ----------------------------------------------------------------------------
 #
 """Utils module for calculating embeddings for text."""
-import sys
 import re
+import sys
 import warnings
 from itertools import islice
 from typing import Optional
+```
 
 import numpy as np
 from tqdm import tqdm
