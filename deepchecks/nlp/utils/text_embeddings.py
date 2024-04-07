@@ -12,7 +12,7 @@
 import sys
 import re
 import warnings
-from itertools import islice
+import islice  # Move islice before typing
 from typing import Optional
 
 import numpy as np
