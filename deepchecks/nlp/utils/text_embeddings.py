@@ -8,12 +8,12 @@
 # along with Deepchecks.  If not, see <http://www.gnu.org/licenses/>.
 # ----------------------------------------------------------------------------
 #
-"""Utils module for calculating embeddings for text."""
-import sys
-import re
-import warnings
-from itertools import islice
-from typing import Optional
+"""Utils module for calculating embedd    prediction = fasttext_model.predict(text.replace('\n', ' '), k=1, threshold=lang_certainty_threshold)[0]
+    # label is empty for detection below threshold:
+    language_code = prediction[0].replace('__label__', '') if prediction else None
+    return language_code
+
+
 
 import numpy as np
 from tqdm import tqdm
