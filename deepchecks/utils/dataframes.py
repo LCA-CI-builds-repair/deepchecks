@@ -44,8 +44,8 @@ def default_fill_na_per_column_type(df: pd.DataFrame, cat_features: t.Optional[t
 def default_fill_na_series(col: pd.Series, is_cat_column: t.Optional[bool] = None) -> t.Optional[pd.Series]:
     """Fill NaN values based on column type if possible otherwise returns None."""
     if is_cat_column and 'None' not in col.astype('object').unique():
-            return col.astype('object').fillna('None')            
-    elif is_numeric_dtype(col):
+        return col.astype('object').fillna('None')            
+    elif pd.api.types.is_numeric_dtype(col):  # Use pd.api.types.is_numeric_dtype to check if the column is numeric
         return col.astype('float64').fillna(np.nan)
     
     common_values_list = col.mode()
