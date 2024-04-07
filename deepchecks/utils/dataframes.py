@@ -49,7 +49,7 @@ def default_fill_na_series(col: pd.Series, is_cat_column: t.Optional[bool] = Non
         return col.astype('float64').fillna(np.nan)
     
     common_values_list = col.mode()
-    if isinstance(common_values_list, pd.Series) and len(common_values_list) > 0:
+    if isinstance(common_values_list, pd.Series):
         return col.fillna(common_values_list[0])
     return None
 
