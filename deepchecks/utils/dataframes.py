@@ -41,16 +41,21 @@ def default_fill_na_per_column_type(df: pd.DataFrame, cat_features: t.Optional[t
     return pd.DataFrame(result, index=df.index)
 
 
-def default_fill_na_series(col: pd.Series, is_cat_column: t.Optional[bool] = None) -> t.Optional[pd.Series]:
-    """Fill NaN values based on column type if possible otherwise returns None."""
-    if is_cat_column and 'None' not in col.astype('object').unique():
-            return col.astype('object').fillna('None')            
-    elif is_numeric_dtype(col):
-        return col.astype('float64').fillna(np.nan)
-    
-    common_values_list = col.mode()
-    if isinstance(common_values_list, pd.Series) and len(common_values_list) > 0:
-        return col.fillna(common_values_list[0])
+def default\_fill\_na\_series(col: pd.Series, is\_cat\_column: t.Optional[bool] = None) -> t.Optional[pd.Series]:
+""Fill NaN values based on column type if possible otherwise returns None.""
+if is\_cat\_column and 'None' not in col.astype('object').unique():
+return col.astype('object').fillna('None')
+elif is\_numeric\_dtype(col):
+return col.astype('float64').fillna(np.nan)
+except ValueError as e:
+print(f"Error: {e}")
+return None
+common\_values\_list = col.mode()
+if isinstance(common\_values\_list, pd.Series) and len(common\_values\_list) > 0:
+return col.fillna(common\_values\_list[0])
+except KeyError as e:
+print(f"Error: {e}")
+return None
     return None
 
 
