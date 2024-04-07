@@ -153,8 +153,6 @@ def language(
     # label is empty for detection below threshold:
     language_code = prediction[0].replace('__label__', '') if prediction else None
     return language_code
-
-
 def english_text(
         text: str,
         lang_certainty_threshold: float = 0.8,
