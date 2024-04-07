@@ -15,6 +15,29 @@ import warnings
 from itertools import islice
 from typing import Optional
 
+def get_embeddings(text: str, fasttext_model: FastText, embedding_dict: dict, embedding_dim: int) -> np.ndarray:
+    """Calculate text embeddings using a fastText model and a pre-trained embedding dictionary.
+
+    Args:
+        text: The text to calculate embeddings for.
+        fasttext_model: The fastText model to use for embedding calculation.
+        embedding_dict: The pre-trained embedding dictionary.
+        embedding_dim: The embedding dimension.
+
+    Returns:
+        np.ndarray: The text embeddings.
+    """
+    text = text.replace('\n', ' ')
+    try:
+        # Tokenize the text and look up the word embeddings in the dictionary
+        words = fasttext_model.tokenize(text)
+        word_embeddings = [embedding_dict[word] for word in words if word in embedding_dict]
+        # Calculate the average embedding for the text
+        return np.mean(word_embeddings, axis=0)
+    except KeyError:
+        warnings.warn("Could not find word embeddings for text: " + str(text))
+        return np.zeros(embedding_dim)
+
 import numpy as np
 from tqdm import tqdm
 

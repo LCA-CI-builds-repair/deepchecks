@@ -149,12 +149,14 @@ def language(
         fasttext_model = get_fasttext_model()
 
     # Predictions are the first prediction (k=1), only if the probability is above the threshold
-    prediction = fasttext_model.predict(text.replace('\n', ' '), k=1, threshold=lang_certainty_threshold)[0]
-    # label is empty for detection below threshold:
-    language_code = prediction[0].replace('__label__', '') if prediction else None
-    return language_code
-
-
+    try:
+        prediction = fasttext_model.predict(text.replace('\n', ' '), k=1, threshold=lang_certainty_threshold)[0]
+        # label is empty for detection below threshold:
+        language_code = prediction[0].replace('__label__', '') if prediction else None
+        return language_code
+    except KeyError:
+        warnings.warn("Could not detect language for text: " + str(text))
+        return None
 def english_text(
         text: str,
         lang_certainty_threshold: float = 0.8,
