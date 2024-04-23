@@ -1,4 +1,7 @@
-# ----------------------------------------------------------------------------
+# -----------------------------------------------------------------if not hasattr(context.model, 'predict_proba'):
+    raise DeepchecksNotSupportedError('Predicted probabilities not supplied. The calibration score check '
+                                      'tests the calibration of the predicted probabilities, rather'
+                                      ' than the predicted classes.')-------
 # Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
 #
 # This file is part of Deepchecks.

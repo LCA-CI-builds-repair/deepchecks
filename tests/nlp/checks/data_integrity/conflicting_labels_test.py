@@ -1,5 +1,13 @@
 # ----------------------------------------------------------------------------
-# Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
+# Copyright (C) 2021-2023 D        ),
+        ambiguous_samples_ratio=0.36363636363636365,
+        ambiguous_samples=[
+            # NOTE:
+            # tests depend on items order in this list
+            AmbiguousDuplicatVariant(
+                labels=['0', '1'],
+                sample_ids=[0, 9],
+                text=[ (https://www.deepchecks.com)
 #
 # This file is part of Deepchecks.
 # Deepchecks is distributed under the terms of the GNU Affero General

@@ -1,4 +1,6 @@
-# ----------------------------------------------------------------------------
+# -----------------------------    Finally, the substrings with the highest frequency and those surpassing a significance level are displayed.
+
+    Parameters--------------------------------------------
 # Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
 #
 # This file is part of Deepchecks.

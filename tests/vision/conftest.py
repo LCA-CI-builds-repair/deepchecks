@@ -1,4 +1,7 @@
-# ----------------------------------------------------------------------------
+# --------------------------------PROJECT_DIR = pathlib.Path(__file__).absolute().parent.parent.parent
+torch.hub.set_dir(str(PROJECT_DIR))
+
+__all__ = ['device',----------------------------------------
 # Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
 #
 # This file is part of Deepchecks.

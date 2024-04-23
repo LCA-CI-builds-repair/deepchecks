@@ -1,7 +1,30 @@
 .. raw:: html
 
    <!--
-     ~ ----------------------------------------------------------------------------
+     ~ ----------------------------------------------   make tes-------------
+.. _linux-mac-coding-style:
+
+Changes to Python code should pass both linting and docstring check. You can
+run------------
+.. _windows-coding-style:
+
+Changes to Python code should pass both linting and docstring check.
+In order to validate your code style, you can run the following commands:
+
+.. code:: bash
+
+   # To run pylint on all the filesowing command in order to validate your code style using
+``pylint`` and ``pydocstring``: 
+
+.. code:: bash
+
+   make validatenishing with your development and prior to creating a pull
+request, run the following command in order to run the tests on every
+supported python version, thus validating that your PR tests will pass.
+
+.. code:: bash
+
+   make tox--------------------
      ~ Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
      ~
      ~ This file is part of Deepchecks.

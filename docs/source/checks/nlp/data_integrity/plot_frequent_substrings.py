@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-"""
-.. _nlp__frequent_substrings:
+"""Finally, the substrings with the highest frequency and those surpassing a significance level are displayed.
+
+Create TextData _nlp__frequent_substrings:
 
 Frequent Substrings
 ********************
