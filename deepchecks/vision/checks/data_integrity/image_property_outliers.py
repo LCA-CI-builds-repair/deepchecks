@@ -1,4 +1,21 @@
-# ----------------------------------------------------------------------------
+# ---------------------from typing import List, Dict, Any, Callable
+
+class ImagePropertyOutliers:
+    """Find outliers images with respect to the given properties.
+
+    The check computes several image properties and then computes the number of outliers for each property.
+    The check uses `IQR <https://en.wikipedia.org/wiki/Interquartile_range#Outliers>`_ to detect outliers out of the
+    single dimension properties.
+
+    Parameters
+    ----------
+    image_properties : List[Dict[str, Any]], default: None
+        List of properties. Replaces the default deepchecks properties.
+        Each property is a dictionary with keys ``'name'`` (str), ``method`` (Callable) and ``'output_type'`` (str),
+        representing attributes of said method. 'output_type' must be one of:
+
+        - ``'numerical'`` - for continuous ordinal outputs.
+        - ``'categorical'`` - for discrete, non-ordinal outputs. These can still be numbers,----------------------------------------
 # Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
 #
 # This file is part of Deepchecks.
