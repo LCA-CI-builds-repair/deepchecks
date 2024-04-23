@@ -1,5 +1,6 @@
 # ----------------------------------------------------------------------------
-# Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
+# Copyright (C) 2021-2023 Deepchecks (https://www.deepcheck        raise DeepchecksValueError('Data that has not been seen before is being passed for inference with static '
+                                   'predictions. Please ensure that a valid model is provided for inference.'))
 #
 # This file is part of Deepchecks.
 # Deepchecks is distributed under the terms of the GNU Affero General

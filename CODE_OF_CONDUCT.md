@@ -1,6 +1,10 @@
    <!--
      ~ ----------------------------------------------------------------------------
-     ~ Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
+     ~ Copyright (C) 2021-2023 Deepchecks (htFor answers to common questions about this code of conduct, see the FAQ at
+https://www.contributor-covenant.org/faq. Translations are available at
+https://www.contributor-covenant.org/translations.
+
+Please refer to the Contributor Covenant Code of Conduct for detailed guidelines.www.deepchecks.com)
      ~
      ~ This file is part of Deepchecks.
      ~ Deepchecks is distributed under the terms of the GNU Affero General

@@ -4,7 +4,15 @@
 The Vision Data Class
 =====================
 
-The :class:`VisionData` class is the deepchecks base class for
+The :This code snippet imports the `torchThis code snippet demonstrates importing `VisionData` and `BatchOutputFormat` from the `deepchecks.vision` module.
+
+.. code-block:: python
+
+    from deepchecks.vision import VisionData, BatchOutputFormatrary for usage in the `deepchecks.vision.datasets.detection.coco_torch` module.
+
+.. code-block:: python
+
+    import torch:`VisionData` class is the deepchecks base class for
 storing your data for a vision task. It is essentially a wrapper around a batch loader of images, labels,
 and predictions, that allows deepchecks to efficiently calculate different
 :ref:`checks <vision__checks_gallery>` on your data, by caching some of the information.

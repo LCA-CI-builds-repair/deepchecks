@@ -1,4 +1,11 @@
-============================
+=====================This code snippet demonstrates importing `H2OWrapper` and `MultiModelPerformanceReport` for integrating with H2O models in `deepchecks.tabular`.
+
+.. code:: ipython3
+
+    from deepchecks.tabular.integrations.h2o import H2OWrapper
+    from deepchecks.tabular.checks import MultiModelPerformanceReport
+
+    h2o_deepchecks_model = H2OWrapper(h2o_model)
 H2O
 ============================
 

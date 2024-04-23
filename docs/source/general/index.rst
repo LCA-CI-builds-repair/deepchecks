@@ -4,7 +4,13 @@
 General
 =======
 
-Here you can find the key concepts, structure, recommended flow, and dive in to many of the deepchecks functionalities.
+Here you can find the k.. toctree::
+   :maxdepth: 2
+
+   index
+   installation
+   usage
+   troubleshooting concepts, structure, recommended flow, and dive in to many of the deepchecks functionalities.
 
 .. image:: /_static/images/general/checks-and-conditions.png
    :alt: Deepchecks Testing Suite of Checks
