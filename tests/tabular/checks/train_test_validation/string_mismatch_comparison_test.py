@@ -1,8 +1,23 @@
 # ----------------------------------------------------------------------------
 # Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
 #
-# This file is part of Deepchecks.
-# Deepchecks is distributed under the terms of the GNU Affero General
+# This file is part otrain, val, clf = diabetes_split_dataset_and_model
+train = Dataset(train.data.copy(), label='target', cat_features=['sex'])
+val = Dataset(val.data.copy(), label='target', cat_features=['sex'])
+train.data.loc[train.data.index % 2 == 0, 'age'] = 30
+val.data.loc[val.data.index % 2 == 1, 'age'] = 32
+train.data.loc[train.data.index % 2 == 0, 'bmi'] = 25.5
+val.data.loc[val.data.index % 2 == 1, 'bmi'] = 26.0
+train.data.loc[train.data.index % 2 == 0, 'bp'] = 120
+val.data.loc[val.data.index % 2 == 1, 'bp'] = 122
+train.data.loc[train.data.index % 2 == 0, 'sex'] = 'male'
+val.data.loc[val.data.index % 2 == 1, 'sex'] = 'female'
+# Arrange
+check = StringMismatchComparison(n_top_columns=3)
+# Act
+result = check.run(test_dataset=val, train_dataset=train)
+# Assert - Check the length of columns after transposing the display table
+assert_that(result.display[0].columns, has_length(3))eepchecks is distributed under the terms of the GNU Affero General
 # Public License (version 3 or later).
 # You should have received a copy of the GNU Affero General Public License
 # along with Deepchecks.  If not, see <http://www.gnu.org/licenses/>.

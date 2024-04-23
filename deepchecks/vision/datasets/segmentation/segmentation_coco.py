@@ -2,7 +2,20 @@
 # Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
 #
 # This file is part of Deepchecks.
-# Deepchecks is distributed under the terms of the GNU Affero General
+# Deepchecks is if test_mode:
+    if self.train:
+        self.images = images[0:5] * 2
+        self.labels = labels[0:5] * 2
+    else:
+        self.images = images[1:6] * 2
+        self.labels = labels[1:6] * 2
+else:
+    if self.train:
+        self.images = images[0:train_len]
+        self.labels = labels[0:train_len]
+    else:
+        self.images = images[train_len:]
+        self.labels = labels[train_len:]er the terms of the GNU Affero General
 # Public License (version 3 or later).
 # You should have received a copy of the GNU Affero General Public License
 # along with Deepchecks.  If not, see <http://www.gnu.org/licenses/>.
