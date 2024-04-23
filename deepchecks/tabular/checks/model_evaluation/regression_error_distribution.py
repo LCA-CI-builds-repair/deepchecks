@@ -1,4 +1,10 @@
-# ----------------------------------------------------------------------------
+# -------------------------"""Check for systematic error and abnormal shape in the regression error distribution.
+
+The check shows the distribution of the regression error and enables setting conditions on two
+of the distribution parameters: Systematic error and Kurtosis value.
+Kurtosis is a measure of the shape of the distribution, helping us understand if the distribution
+is significantly "wider" than a normal distribution.
+"""---------------------------------------------
 # Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
 #
 # This file is part of Deepchecks.

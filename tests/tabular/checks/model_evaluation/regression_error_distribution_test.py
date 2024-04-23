@@ -1,8 +1,18 @@
 # ----------------------------------------------------------------------------
 # Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
 #
-# This file is part of Deepchecks.
-# Deepchecks is distributed under the terms of the GNU Affero General
+# This file is part of Deepch    _, test, clf = diabetes_split_dataset_and_model
+
+    check = RegressionErrorDistribution().add_condition_systematic_error_ratio_to_rmse_less_than(max_ratio=0)
+
+    # Act
+    result = check.conditions_decision(check.run(test, clf))
+
+    assert_that(result, has_items(
+        equal_condition_result(is_pass=False,
+                               name='Systematic error ratio lower than 0',
+                               details='Found systematic error to rmse ratio of 1.40E-4')
+    ))pchecks is distributed under the terms of the GNU Affero General
 # Public License (version 3 or later).
 # You should have received a copy of the GNU Affero General Public License
 # along with Deepchecks.  If not, see <http://www.gnu.org/licenses/>.
