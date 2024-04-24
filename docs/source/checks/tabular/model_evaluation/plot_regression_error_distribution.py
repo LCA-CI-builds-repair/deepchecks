@@ -1,4 +1,26 @@
-# -*- coding: utf-8 -*-
+# -*-import pandas as pd
+imimport pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the dataset containing regression errors
+regression_errors = pd.read_csv('regression_errors.csv')
+
+# Plot a histogram to visualize the distribution of regression errors
+plt.hist(regression_errors['error'], bins=20, color='skyblue', edgecolor='black')
+plt.xlabel('Error')
+plt.ylabel('Frequency')
+plt.title('Distribution of Regression Errors')
+plt.show()ort matplotlib.pyplot as plt
+
+# Load the dataset containing regression errors
+regression_errors = pd.read_csv('regression_errors.csv')
+
+# Plot a histogram to visualize the distribution of regression errors
+plt.hist(regression_errors['error'], bins=20, color='skyblue', edgecolor='black')
+plt.xlabel('Error')
+plt.ylabel('Frequency')
+plt.title('Distribution of Regression Errors')
+plt.show()coding: utf-8 -*-
 """
 .. _tabular__regression_error_distribution:
 

@@ -4,7 +4,14 @@
 The Dataset Object
 ====================
 
-The ``Dataset`` is a container for the data and the relevant ML metadata such as special column roles (e.g. label, index, categorical columns).
+The ``Dataset`` is a containe| 2  | 0.2 | 6    class
+0   1
+1   2
+2   1
+3   2
+
+.. _dataset_object__inferring_categorical_features: |
+| 3  | 0.6 | 7 | 1 | 2 |for the data and the relevant ML metadata such as special column roles (e.g. label, index, categorical columns).
 It enables to take into account the relevant context during validation,
 and to save it in a convenient manner, and is a basic building block in deepchecks.
 

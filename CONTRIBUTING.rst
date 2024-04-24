@@ -4,7 +4,10 @@
      ~ ----------------------------------------------------------------------------
      ~ Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
      ~
-     ~ This file is part of Deepchecks.
+     ~ This file is    pytest .\      pylint deepchecks/nlp/utils/text_properties.py To run pylint on all the files in the deepchecks directory
+   pylint deepchecks/s\vision\ -m vision
+   # Execute tabular tests 
+   pytest .\tests\tabular\ -m tabular of Deepchecks.
      ~ Deepchecks is distributed under the terms of the GNU Affero General
      ~ Public License (version 3 or later).
      ~ You should have received a copy of the GNU Affero General Public License

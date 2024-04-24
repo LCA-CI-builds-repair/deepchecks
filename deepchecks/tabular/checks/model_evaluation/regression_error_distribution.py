@@ -1,5 +1,6 @@
 # ----------------------------------------------------------------------------
-# Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
+# Copyright (C) 20                title='Distribution of Prediction Errors',
+                labels={'x': f'{dataset.label_name} Prediction Error', 'y': 'Count'},-2023 Deepchecks (https://www.deepchecks.com)
 #
 # This file is part of Deepchecks.
 # Deepchecks is distributed under the terms of the GNU Affero General

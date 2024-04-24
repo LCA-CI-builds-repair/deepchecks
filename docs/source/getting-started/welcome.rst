@@ -1,4 +1,4 @@
-.. image:: /_static/images/welcome/deepchecks_continuous_validation_light.png
+.. image:: /_static/images/welcome/deepchecks_continuous        :ref:`using_deepchecks_ci_cd`alidation_light.png
    :alt: Deepchecks Continuous Validation: Testing, CI & Monitoring
    :align: center
    :width: 80%
