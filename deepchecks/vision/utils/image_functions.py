@@ -1,4 +1,25 @@
-# ----------------------------------------------------------------------------
+# -----------------------------------def display_image(image: np.ndarray, label: np.ndarray, task_type: TaskType, label_map: LabelMap, 
+                  thumbnail_size: t.Tuple[int, int] = (200, 200), draw_label: bool = True) -> str:
+    """Return an image to show as output of the display.
+
+    Parameters
+    ----------
+    image : np.ndarray
+        The image to draw, must be a [H, W, C] 3D numpy array.
+    label : np.ndarray
+        2-dim labels tensor for the image to draw on top of the image, shape depends on task type.
+    task_type : TaskType
+        The task type associated with the label.
+    label_map: LabelMap
+        Map of class id to label
+    thumbnail_size: t.Tuple[int,int]
+        The required size of the image for display.
+    draw_label : bool, default: True
+        Whether to draw the label on the image or not.
+    Returns
+    -------
+    str
+    """---------------------
 # Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
 #
 # This file is part of Deepchecks.

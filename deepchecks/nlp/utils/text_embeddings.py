@@ -1,5 +1,42 @@
-# ----------------------------------------------------------------------------
-# Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
+#def calculate_builtin_embeddings(text: np.array, model: str = 'miniLM',
+                                 file_path: Optional[str] = 'embeddings.npy',
+                                 device: Optional[str] = None,
+                                 long_sample_behaviour: str = 'average+warn',
+                                 open_ai_batch_size: int = 500) -> np.array:
+    """
+    Get the built-in embeddings for the dataset.
+
+    Parameters
+    ----------
+    text : np.array
+        The text to get embeddings for.
+    model : str, default 'miniLM'
+        The type of embeddings to return. Can be either 'miniLM' or 'open_ai'.
+        For 'open_ai' option, the model used is 'text-embedding-ada-002' and requires to first set an open ai api key
+        by using the command openai.api_key = YOUR_API_KEY
+    file_path : Optional[str], default 'embeddings.npy'
+        If given, the embeddings will be saved to the given file path.
+    device : str, default None
+        The device to use for the embeddings. If None, the default device will be used.
+    long_sample_behaviour : str, default 'average+warn'
+        How to handle long samples. Averaging is done as described in
+        https://github.com/openai/openai-cookbook/blob/main/examples/Embedding_long_inputs.ipynb
+        Currently, applies only to the 'open_ai' model, as the 'miniLM' model can handle long samples.
+
+        Options are:
+            - 'average+warn' (default): average the embeddings of the chunks and warn if the sample is too long.
+            - 'average': average the embeddings of the chunks.
+            - 'truncate': truncate the sample to the maximum length.
+            - 'raise': raise an error if the sample is too long.
+            - 'nan': return an embedding vector of nans for each sample that is too long.
+    open_ai_batch_size : int, default 500
+        The amount of samples to send to open ai in each batch. Reduce if getting errors from open ai.
+
+    Returns
+    -------
+        np.array
+            The embeddings for the dataset.
+    """2023 Deepchecks (https://www.deepchecks.com)
 #
 # This file is part of Deepchecks.
 # Deepchecks is distributed under the terms of the GNU Affero General
