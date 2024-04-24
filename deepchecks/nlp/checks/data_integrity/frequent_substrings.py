@@ -1,4 +1,33 @@
-# ----------------------------------------------------------------------------
+# ------------------------    """Checks for frequent substrings in the dataset.
+
+    Substrings of varying lengths (n-grams) are extracted from the dataset text samples.
+    The frequencies of the        ngrams_to_remove = []
+        for ngram in ngrams:
+            ngram_freq = len(ngram_info[ngram]['original_indexes']) / num_samples
+            if ngram_freq < self.min_substring_ratio:
+                ngrams_to_remove.ap            if self.n_samples < len(dataset):
+                for substring_index, substring in enumerate(df['Text']):
+                    indexes = []
+                    for sample_index, sample in enumerate(dataset[:self.n_samples]):
+                        if substring in sample:
+                            indexes.append(sample_index)
+                    df.at[substring_index, 'Sample IDs'] = indexes
+                    df.at[substring_index, 'Frequency'] = len(indexes) / len(dataset[:self.n_samples])
+                df = df.sort_values(by=['Frequency', 'Text'], ascending=False)
+
+            df['Number of Samples'] = df['Sample IDs'].str.len()
+            df['% In data'] = df['Frequency'].apply(format_percent)           else:
+                ngram_info[ngram]['freq'] = ngram_freq
+                for index in ngram_info[ngram]['filtered_indexes']:
+                    filtered_samples.add(index)
+                del ngram_info[ngram]['filtered_indexes']
+
+        for ngram_to_remove in ngrams_to_remove:
+            del ngram_info[ngram_to_remove]
+
+        return ngram_info, filtered_samplesare calculated and only substrings exceeding a defined minimum length are retained.
+    The substrings are then sorted by their frequencies and the most frequent substrings are identified.
+    """-----------------------------------------------
 # Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
 #
 # This file is part of Deepchecks.

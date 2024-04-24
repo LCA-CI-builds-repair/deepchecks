@@ -1,5 +1,47 @@
 # ----------------------------------------------------------------------------
-# Copyright (C) 2021 Deepchecks (https://www.deepchecks.com)
+# Copyright (C) 2021 Deepchecks (https:    result = check.run(train, test)
+
+    # Assert
+    assert_that(resul    # Arrange
+    check = LabelDrift(categorical_drift_method='PSI') \
+        .add_    # Arrange
+    def prop(labels):
+        return [int(x[0][0]) if len(x) != 0 else 0 for x in labels]
+
+    alternative_properties = [
+        {'name': 'test', 'method': prop, 'output_type': 'numerical'}]
+    check = LabelDrift(label_properties=alternative_properties, numerical_drift_method='EMD')
+
+    # Act
+    result = check.run(coco_visiondata_train, coco_visiondata_test)
+
+    # Assert
+    assert_that(result.value, has_entries(
+        {'test': has_entries(
+            {'Drift score': close_to(0.05, 0.001),
+             'Method': equal_to('Earth Mover\'s Distance')}
+        )
+        }
+    ))re_less_than(max_allowed_categorical_score=0.1)
+    mod_train_ds, mod_test_ds = mnist_drifted_datasets
+
+    # Act
+    result = check.run(mod_train_ds, mod_test_ds)
+    condition_result, *_ = result.conditions_results
+
+    # Assert
+    assert_that(condition_result, equal_condition_result(
+        is_pass=False,
+        name='categorical drift score < 0.1 and numerical drift score < 0.15',
+        details='Failed for 1 out of 1 label properties.\nFound 1 categorical label properties with PSI above '
+                'threshold: {\'Samples Per Class\': \'0.32\'}'
+    ))ries(
+        {'Samples Per Class': has_entries(
+            {'Drift score': close_to(0, 0.001),
+             'Method': equal_to('Cramer\'s V')}
+        )
+        }
+    ))checks.com)
 #
 # This file is part of Deepchecks.
 # Deepchecks is distributed under the terms of the GNU Affero General

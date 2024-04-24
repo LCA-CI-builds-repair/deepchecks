@@ -1,7 +1,14 @@
 # ----------------------------------------------------------------------------
 # Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
 #
-# This file is part of Deepchecks.
+# This file is pa        weak_segments = self._weak_segments_search(data=encoded_dataset.data, score_per_sample=score_per_sample,
+                                                   label_col=dataset_subset.label_col,
+                                                   feature_rank_for_search=feature_rank,
+                                                   dummy_model=dummy_model, scorer=scorer,
+                                                   multiple_segments_per_feature=self.multiple_segments_per_feature)
+
+        if len(weak_segments) == 0:
+            raise DeepchecksProcessError('WeakSegmentsPerformance was unable to find any weak segments. Consider increasing the number of samples (n_samples) or providing additional features for better analysis.')pchecks.
 # Deepchecks is distributed under the terms of the GNU Affero General
 # Public License (version 3 or later).
 # You should have received a copy of the GNU Affero General Public License

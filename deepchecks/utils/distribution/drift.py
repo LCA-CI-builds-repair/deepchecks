@@ -1,8 +1,32 @@
 # ----------------------------------------------------------------------------
-# Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
+# Copyright (C) 2021-2023 Deepchecks (https://www.deepch    Returns
+    -------
+    float
+        The bias-corrected Cramer's V value of the 2 distributions..com)
 #
-# This file is part of Deepchecks.
-# Deepchecks is distributed under the terms of the GNU Affero General
+# This file is part of Deepc    # Copyright (c) [year] [fullname]
+
+    All rights reserved.
+
+    Redistribution and use in source and binary forms                        with_display: bool = True,
+                        dataset_names: Tuple[str, str] = DEFAULT_DATASET_NAMES
+                        ) -> Tuple[float, str, Optional[Figure]]:
+    """
+    Calculate drift score per column with optional display settings.h or without
+    modification, are permitted provided that the following conditions
+    are met:
+
+    1. Redistributions of source code must retain the above copyright
+       notice, this list of conditions and the following disclaimer.
+
+    2. Redistributions in binary form must reproduce the above
+       copyright notice, this list of conditions and the following
+       disclaimer in the documentation and/or other materials provided
+       with the distribution.
+
+    3. Neither the name of the copyright holder nor the names of its
+       contributors may be used to endorse or promote products derived
+       from this software without specific prior written permission.ks is distributed under the terms of the GNU Affero General
 # Public License (version 3 or later).
 # You should have received a copy of the GNU Affero General Public License
 # along with Deepchecks.  If not, see <http://www.gnu.org/licenses/>.
