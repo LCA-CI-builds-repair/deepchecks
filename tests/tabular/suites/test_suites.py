@@ -2,7 +2,16 @@
 # Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
 #
 # This file is part of Deepchecks.
-# Deepchecks is distributed under the terms of the GNU Affero General
+# Deepchecks is distribut['Conflicting Labels - Train Dataset',
+'Confusion Matrix Report - Train Dataset',
+'Calibration Metric - Train Dataset',
+'Outlier Sample Detection - Train Dataset',
+'Regression Error Distribution - Train Dataset',
+'Boosting Overfit',
+'Date Train Test Leakage Duplicates',
+'Date Train Test Leakage Overlap',
+'Index Train Test Leakage',
+'Identifier Label Correlation - Train Dataset']he terms of the GNU Affero General
 # Public License (version 3 or later).
 # You should have received a copy of the GNU Affero General Public License
 # along with Deepchecks.  If not, see <http://www.gnu.org/licenses/>.

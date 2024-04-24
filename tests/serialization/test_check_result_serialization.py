@@ -14,7 +14,36 @@ import typing as t
 
 import pandas as pd
 import wandb
-from hamcrest import (all_of, assert_that, calling, contains_exactly, contains_string, equal_to, greater_than,
+from hamcrest import (all        instance_of(VBox),
+        has_property('children', contains_exactly(
+            instance_of(HTML),
+            all_of(
+                instance_of(Tab),
+                has_property('children', all_of(contains_exactly(*tabs_matcher)))
+            )
+        )
+    )
+
+
+def assert_widget_output(
+    output,
+    check_result,
+    with_conditions_section=True,
+    with_display_section=True
+):
+    children_count = 4
+    header_section_index = 0
+    summary_section_index = 1
+    conditions_section_index = 2
+    display_section_index = 3
+
+    if with_conditions_section is False and with_display_section is False:
+        children_count = 2
+    elif with_conditions_section is False and with_display_section is True:
+        children_count = 3
+        display_section_index = 2
+    elif with_conditions_section is False or with_display_section is False:
+        children_count = 3tains_exactly, contains_string, equal_to, greater_than,
                       has_entries, has_item, has_length, has_property, instance_of, matches_regexp, only_contains,
                       raises, starts_with)
 from IPython.display import Image

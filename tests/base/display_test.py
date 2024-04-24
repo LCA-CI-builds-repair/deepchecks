@@ -3,9 +3,137 @@
 #
 # This file is part of Deepchecks.
 # Deepchecks is distributed under the terms of the GNU Affero General
-# Public License (version 3 or later).
-# You should have received a copy of the GNU Affero General Public License
-# along with Deepchecks.  If not, see <http://www.gnu.org/licenses/>.
+# Public Li    # Arrange
+    failure = CheckFailure(DummyCheck(), Exception('error message'))
+    # Assert
+    with patch('deepchecks.core.display.is_colab_env', return_value=True):
+        with patch('deepchecks.core.display.display_html') as mock:
+            failure.display_check(as_widget=True)
+            mock.assert_called_once()
+            args, kwargs = list(mock.call_args)
+            html, *_ = args
+            assert_that(html, all_of(
+                instance_of(str),
+                is_html_document()
+            ))
+
+
+def test_check_failure_display_with_enabled_widgets():
+    # Arrange
+    failure = CheckFailure(DummyCheck(), Exception('error message'))
+    # Assert
+    with patch('deepchecks.core.display.display_html', Mock(return_value=True)) as mock:
+        w = failure.display_check(as_widget=True)
+        mock.assert_called_once()
+
+
+def test_check_failure_display():
+    # Arrange
+    failure = CheckFailure(DummyCheck(), Exception('error message'))
+    # Assert
+    with patch('deepchecks.core.display.display') as mock:
+        failure.display_check(as_widget=False)
+        mock.assert_called_once()
+
+
+def test_check_failure_show():
+    # Arrange
+    failure = CheckFailure(DummyCheck(), Exception('error message'))
+
+    with patch('deepchecks.core.display.display_html') as mock:
+        # Assert
+        assert_that(failure.show(), is_(None))
+        mock.assert_called_once()
+
+
+def test_check_failure_show_with_sphinx_gallery_env_enabled():
+    with plotly_default_renderer('sphinx_gallery'):
+        # Arrange
+        failure = CheckFailure(DummyCheck(), Exception('error message'))
+        # Assert
+        r = failure.show()
+        assert_that(hasattr(r, '_repr_html_'))
+        assert_that(
+            r._repr_html_(),
+            all_of(
+                instance_of(str),
+                has_length(greater_than(0)),
+                is_html_document()
+            )
+        )
+
+
+def test_check_failure_ipython_display():
+    # Arrange
+    failure = CheckFailure(DummyCheck(), Exception('error message'))
+    # Assert
+    with patch('deepchecks.core.display.display_html') as mock:
+        failure._ipython_display_()
+        mock.assert_called_once()
+
+
+def test_check_failure_repr_mimebundle():
+    # Arrange
+    failure = CheckFailure(DummyCheck(), Exception('error message'))
+    # Assert
+    assert_that(
+        failure._repr_mimebundle_(),
+        all_of(
+            instance_of(dict),
+            has_length(greater_than(0)),
+            has_entries({
+                'text/html': instance_of(str),
+                'application/json': any_of(instance_of(dict), instance_of(dict))}))
+    )
+
+
+def test_check_failure_repr_html():
+    # Arrange
+    failure = CheckFailure(DummyCheck(), Exception('error message'))
+    # Assert
+    assert_that(
+        failure._repr_html_(),
+        all_of(instance_of(str), has_length(greater_than(0))
+    )
+
+
+def test_check_failure_repr_json():
+    # Arrange
+    failure = CheckFailure(DummyCheck(), Exception('error message'))
+    # Assert
+    assert_that(
+        failure._repr_json_(),
+        all_of(
+            instance_of(dict),
+            has_length(greater_than(0)))
+    )
+
+
+def test_check_failure_save_as_html():
+    # Arrange
+    failure = CheckFailure(DummyCheck(), Exception('error message'))
+    # Act
+    filename = t.cast(str, failure.save_as_html('check-failure.html'))
+    # Assert
+    assert_saved_html_file(filename)
+
+
+def test_check_failure_save_as_html_without_providing_output_filename():
+    # Arrange
+    failure = CheckFailure(DummyCheck(), Exception('error message'))
+    # Act
+    filename = t.cast(str, failure.save_as_html())
+    # Assert
+    assert_saved_html_file(filename)
+
+
+def test_check_failure_save_as_html_with_as_widget_parameter_set_to_false():
+    # Arrange
+    failure = CheckFailure(DummyCheck(), Exception('error message'))
+    # Act
+    filename = t.cast(str, failure.save_as_html(as_widget=False))
+    # Assert
+    assert_saved_html_file(filename)not, see <http://www.gnu.org/licenses/>.
 # ----------------------------------------------------------------------------
 #
 """display tests"""

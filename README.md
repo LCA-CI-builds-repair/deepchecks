@@ -3,7 +3,13 @@
    ~ Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
    ~
    ~ This file is part of Deepchecks.
-   ~ Deepchecks is distributed under the terms of the GNU Affero General
+   ~ Deepchecks is distributed under the terms of th<!---
+These checks can be run manually (e.g. during research) or automatically triggered (with CI processes or in scheduled runs for production monitoring).
+The check's results can be examined with visual reports (by saving them to an HTML file, or seeing them in Jupyter),
+processed with code (using their json output), and inspected and collaborated upon with a dynamic UI 
+(for examining test results and for production monitoring).
+Optional conditions can be added to each check, to automatically validate whether it passed or not.
+--->fero General
    ~ Public License (version 3 or later).
    ~ You should have received a copy of the GNU Affero General Public License
    ~ along with Deepchecks.  If not, see <http://www.gnu.org/licenses/>.

@@ -3,8 +3,54 @@
 #
 # This file is part of Deepchecks.
 # Deepchecks is distributed under the terms of the GNU Affero General
-# Public License (version 3 or later).
-# You should have received a copy of the GNU Affero General Public License
+# Publi        not_null_indices = [idx for idx, value in enumerate(property_values) if value is not None]
+        if len(not_null_indices) <= self.n_show_top:
+            lowest_values_idx = not_null_indices
+            highest_values_idx = not_null_indices
+        else:
+            lowest_values_idx = np.argpartition([np.inf if v is None else v for v in property_values],
+                                                self.n_show_top)[:self.n_show_top]
+            highest_values_idx = np.argpartition([np.NINF if v is None else v for v in property_values],
+                                                 -self.n_show_top)[-self.n_show_top:]
+
+        if is_property_per_label:
+            lowest_img_idx = [_sample_index_from_flatten_index(values_lengths_cumsum, x) for x in lowest_values_idx]
+            highest_img_idx = [_sample_index_from_flatten_index(values_lengths_cumsum, x) for x in highest_values_idx]
+        else:
+            lowest_img_idx = lowest_values_idx
+            highest_img_idx = highest_values_idx
+
+        self._lowest_property_value_images[property_name] = \
+            {'images': [images[x] for x in lowest_img_idx],
+             'property_values': [[property_values[x]] if is_property_per_label else property_values[x]
+                                 for x in lowest_values_idx],
+             'labels': [[labels[x]] if is_property_per_label else labels[x] for x in lowest_values_idx]}
+        self._highest_property_value_images[property_name] = \
+            {'images': [images[x] for x in highest_img_idx],
+             'property_values': [[property_values[x]] if is_property_per_label else property_values[x]
+                                 for x in highest_values_idx],
+             'labels': [[labels[x]] if is_property_per_label else labels[x] for x in highest_values_idx]}
+
+
+def _ensure_property_shape(property_values, data_len, prop_name):
+    """Validate the result of the property."""
+    if len(property_values) != data_len:
+        raise DeepchecksProcessError(f'Properties are expected to return value per image but instead got'
+                                     f' {len(property_values)} values for {data_len} images for property '
+                                     f'{prop_name}')
+
+    # If the first item is list validate all items are list of numbers
+    if isinstance(property_values[0], t.Sequence):
+        if any((not isinstance(x, t.Sequence) for x in property_values)):
+            raise DeepchecksProcessError(f'Property result is expected to be either all lists or all scalars but'
+                                         f' got mix for property {prop_name}')
+        if any((not _is_list_of_numbers(x) for x in property_values)):
+            raise DeepchecksProcessError(f'For outliers, properties are expected to be only numeric types but'
+                                         f' found non-numeric value for property {prop_name}')
+    # If first value is not list, validate all items are numeric
+    elif not _is_list_of_numbers(property_values):
+        raise DeepchecksProcessError(f'For outliers, properties are expected to be only numeric types but'
+                                     f' found non-numeric value for property {prop_name}')e received a copy of the GNU Affero General Public License
 # along with Deepchecks.  If not, see <http://www.gnu.org/licenses/>.
 # ----------------------------------------------------------------------------
 #
