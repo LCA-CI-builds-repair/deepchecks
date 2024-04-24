@@ -1,4 +1,13 @@
-# -*- coding: utf-8 -*-
+# -*-import matplotlib.pyplot as plt
+import numpy as np
+
+def plot_regression_error_distribution(actual_values, predicted_values):
+    errors = np.array(actual_values) - np.array(predicted_values)
+    plt.hist(errors, bins=50, color='skyblue', edgecolor='black')
+    plt.xlabel('Error')
+    plt.ylabel('Frequency')
+    plt.title('Regression Error Distribution')
+    plt.show()coding: utf-8 -*-
 """
 .. _tabular__regression_error_distribution:
 

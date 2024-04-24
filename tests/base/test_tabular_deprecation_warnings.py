@@ -1,4 +1,5 @@
-# ----------------------------------------------------------------------------
+# --------"""Contains unit tests for handling deprecation warnings in the tabular package."""
+import warnings------------------------------------------------------------------
 # Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
 #
 # This file is part of Deepchecks.

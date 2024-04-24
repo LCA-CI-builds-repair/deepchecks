@@ -1,4 +1,4 @@
-# ----------------------------------------------------------------------------
+# --------------------------The check displays the distribution of the regression error and title='Regression Error Distribution Plot',llows setting conditions on two distribution parameters: Systematic error and Kurtosis value. Kurtosis is a measure of the distribution's shape, indicating if it deviates significantly from a normal distribution. Systematic error, also known as error bias, represents the mean prediction error of the model.--------------------------------------------
 # Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
 #
 # This file is part of Deepchecks.

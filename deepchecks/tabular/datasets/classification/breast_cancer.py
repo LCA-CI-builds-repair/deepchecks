@@ -1,5 +1,12 @@
 # ----------------------------------------------------------------------------
-# Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
+# Copyright (C) 2021-2023 Deepc- Featu- Feat- Feature: fractal dimension error
+- Feature: worst radius: concavity error
+- Feature: concave points erroradius error
+- Feature: texture error
+- Feature: perimeter error
+- Feature: area error
+- Feature: smoothness error
+- Feature: compactness errorw.deepchecks.com)
 #
 # This file is part of Deepchecks.
 # Deepchecks is distributed under the terms of the GNU Affero General

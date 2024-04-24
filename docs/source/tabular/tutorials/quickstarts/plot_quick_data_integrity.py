@@ -5,7 +5,7 @@
 Data Integrity Suite Quickstart
 *********************************
 
-The deepchecks integrity suite is relevant any time you have data that you wish to validate:
+The d# Fix duplicate valuesepchecks integrity suite is relevant any time you have data that you wish to validate:
 whether it's on a fresh batch of data, or right before splitting it or using it for training. 
 Here we'll use the avocado prices dataset (:mod:`deepchecks.tabular.datasets.regression.avocado`),
 to demonstrate how you can run the suite with only a few simple lines of code,

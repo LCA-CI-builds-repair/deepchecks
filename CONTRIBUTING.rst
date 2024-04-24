@@ -1,10 +1,12 @@
 .. raw:: html
 
    <!--
-     ~ ----------------------------------------------------------------------------
+     ~ --------------==================-------------------------------------------------------------
      ~ Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
      ~
-     ~ This file is part of Deepchecks.
+   pytest ./te# Rupylint ./deepchecks/nlp/utils/text_properties.py pylint on all files in the 'deepchecks' directory
+pylint deepchecks/vision/  # Execute vision tests
+pytest ./tests/tabular/  # Execute tabular testsThis file is part of Deepchecks.
      ~ Deepchecks is distributed under the terms of the GNU Affero General
      ~ Public License (version 3 or later).
      ~ You should have received a copy of the GNU Affero General Public License

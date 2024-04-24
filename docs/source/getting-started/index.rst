@@ -1,4 +1,10 @@
-Getting Started
+G.. toctree::
+    :hidden:
+    :titlesonly:
+    :maxdepth: 1
+
+    welcome
+    installationarted
 ***************
 
 .. toctree::

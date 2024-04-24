@@ -1,4 +1,13 @@
-# -*- coding: utf-8 -*-
+# -*-import matplotlib.pyplot as plt
+import numpy as np
+
+def plot_regression_systematic_error(y_true, y_pred):
+    errors = np.array(y_true) - np.array(y_pred)
+    plt.scatter(y_true, errors, color='orange', edgecolor='black')
+    plt.xlabel('Actual Values')
+    plt.ylabel('Systematic Error')
+    plt.title('Regression Systematic Error Plot')
+    plt.show()coding: utf-8 -*-
 """
 .. _tabular__regression_systematic_error:
 

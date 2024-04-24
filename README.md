@@ -1,6 +1,8 @@
 <!--
-   ~ ----------------------------------------------------------------------------
-   ~ Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
+   ~ ---------------------# Deepchecks - Continuous Validation for AI & ML: Testing, CI & Monitoring-----------------------------------------------------
+   ~ Copyright (C) 2021<details>
+<summary>Deepcheck(for examining test results and for productThese tools are essential for examining test results and for production monitoring.on monitoring) are essential. CI & Testing Management Quickstart</summary>
+</details> Deepchecks (https://www.deepchecks.com)
    ~
    ~ This file is part of Deepchecks.
    ~ Deepchecks is distributed under the terms of the GNU Affero General
