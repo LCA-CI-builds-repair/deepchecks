@@ -10,7 +10,25 @@ import pathlib
 import sys
 import typing as t
 import re
-from subprocess import check_output
+from subprocess import sys
+
+def _import_object_from_name(module_name, fullname):
+    obj = sys.modules.get(module_name)
+    if obj is None:
+        return None
+    for comp in fullname.split('.'):
+        try:
+            obj = getattr(obj, comp)
+        except AttributeError:
+            pass
+    return obj
+
+_top_modules = ['deepchecks']
+_source_root = None
+
+def _find_source_root(source_abs_path):
+    # Add implementation here
+    passt
 
 import plotly.io as pio
 from plotly.io._sg_scraper import plotly_sg_scraper

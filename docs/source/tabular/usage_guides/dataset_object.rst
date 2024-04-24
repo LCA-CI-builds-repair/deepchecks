@@ -4,7 +4,34 @@
 The Dataset Object
 ====================
 
-The ``Dataset`` is a container for the data and the relevant ML metadata such as special column roles (e.g. label, index, categorical columns).
+The ``Dataset`` is ['feature1', 'feature2', 'category']
+>>> ds.label_name
+['class']
+
+Get its internal ``pd.DataFrame``:
+
+>>> ds.data
+    feature1    feature2    categorical_feature    class    
+0   0.1         4           0                     1
+1   0.3         5           0                     2
+2   0.2         6           0                     1
+3   0.6         7           1                     2
+
+Or extract directly only the feature columns or only the label column from within it:
+
+>>> ds.features_columns
+    feature1    feature2    categorical_feature
+0   0.1         4           0
+1   0.3         5           0
+2   0.2         6           0
+3   0.6         7           1
+
+>>> ds.label_col
+    class
+0   1
+1   2
+2   1
+3   2he relevant ML metadata such as special column roles (e.g. label, index, categorical columns).
 It enables to take into account the relevant context during validation,
 and to save it in a convenient manner, and is a basic building block in deepchecks.
 

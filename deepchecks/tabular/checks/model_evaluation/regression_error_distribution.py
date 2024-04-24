@@ -1,5 +1,13 @@
 # ----------------------------------------------------------------------------
-# Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
+# Copyright prediction_diff.name = str(dataset.label_name) + ' Prediction Difference'
+n_smallest = pd.concat([dataset.data.loc[prediction_diff.index], y_pred.loc[prediction_diff.index], prediction_diff], axis=1)
+fig = px.histogram(
+    x=diff.values,
+    nbins=self.n_bins,
+    title='Distribution of Prediction Errors',
+    labels={'x': f'{dataset.label_name} Prediction Error', 'y': 'Count'},
+    height=500
+)023 Deepchecks (https://www.deepchecks.com)
 #
 # This file is part of Deepchecks.
 # Deepchecks is distributed under the terms of the GNU Affero General

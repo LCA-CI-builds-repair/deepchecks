@@ -3,8 +3,15 @@
    <!--
      ~ ----------------------------------------------------------------------------
      ~ Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
-     ~
-     ~ This file is part of Deepchecks.
+   pip install <name_of_your_wheel_file>.whl
+
+Once you have installed all the dependencies, you are ready to work on the project.
+
+Running Unit Tests
+-------------------
+
+To verify and execute all the unit tests, run the following command:
+
      ~ Deepchecks is distributed under the terms of the GNU Affero General
      ~ Public License (version 3 or later).
      ~ You should have received a copy of the GNU Affero General Public License

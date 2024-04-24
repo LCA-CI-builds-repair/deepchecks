@@ -1,4 +1,27 @@
+=CML
 ============================
+
+`CML <https://cml.dev>`__ is a CLI from the creators of DVC - Iterative AI
+that helps integrate your machine learning projects in your CI pipeline.
+
+Deepchecks has an option to save the results of a suite
+as a summary markdown that includes the full html report
+as an attachment - as GitHub markdown and GitLab markdown do not run javascript.
+
+The example here is written for GitLab CI, but the same principles apply in other CI systems.
+
+Export SuiteResult as a Markdown and HTML files
+-----------------------------------------------
+
+.. code-block:: ipython3
+
+    from deepchecks.tabular.datasets.classification.adult import load_data, load_fitted_model
+    from deepchecks.tabular.suites import train_test_validation
+    model = load_fitted_model()
+    train, test = load_data()
+    ttvs = train_test_validation()
+
+    # run the suite and get a SuiteResult=
 CML
 ============================
 

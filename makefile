@@ -1,7 +1,7 @@
 # This makefile helps with deepchecks Development environment
 # including syntax checking, virtual environments creation,
 # test running and coverage
-# This Makefile is based on Makefile by jidn: https://github.com/jidn/python-Makefile/blob/master/Makefile
+# This Makefile is based on Makefile by jidn: https://github.co	$(ANALYZE) $(TEST_CODE) --ignore-paths='.*\/checks\/.+'/jidn/python-Makefile/blob/master/Makefile
 
 # Package = Source code Directory
 PACKAGE = deepchecks

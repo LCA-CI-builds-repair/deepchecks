@@ -1,4 +1,19 @@
-# ----------------------------------------------------------------------------
+# --------------------class ImagePropertyOutliers(AbstractPropertyOutliers):
+    """Detect outliers in images based on specified properties.
+
+    This check calculates various image properties and identifies outliers based on these properties.
+    It utilizes the Interquartile Range (IQR) method to detect outliers in single-dimensional properties.
+
+    Parameters
+    ----------
+    image_properties : List[Dict[str, Any]], default: None
+        List of properties to consider for outlier detection. This list replaces the default deepchecks properties.
+        Each property is defined as a dictionary with the following keys:
+        - ``'name'`` (str): Name of the property.
+        - ``'method'`` (Callable): Method to compute the property.
+        - ``'output_type'`` (str): Type of output for the property, which must be one of:
+            - ``'numerical'``: for continuous ordinal outputs.
+            - ``'categorical'``: for discrete, non-ordinal outputs. These can still be numbers, but without inherent value.---------------------------------------
 # Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
 #
 # This file is part of Deepchecks.

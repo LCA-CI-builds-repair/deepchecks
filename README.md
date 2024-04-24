@@ -2,7 +2,36 @@
    ~ ----------------------------------------------------------------------------
    ~ Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
    ~
-   ~ This file is part of Deepchecks.
+ <details open>
+   <summary>
+      Deepchecks Monitoring Quickstart
+   </summary>
+
+Ju## 📜 Open Source vs Paid 
+
+Deepchecks' projects (`deepchecks/deepchecks` & `deepchecks/monitoring`) are open source and are released under [AGPL 3.0](./LICENSE). the 
+[open source monitoring quickstart docs](https://docs.deepchecks.com/monitoring/stable/getting-started/deploy_self_host_open_source.html)
+to have it up and running on your data.
+You'll then be able to see the checks results over time, set alerts, and interact
+with the dynamic deepchecks UI that looks like this:
+
+<p align="center">
+   <img src="docs/source/_static/images/general/monitoring-app-ui.gif" width="600">
+</p>
+
+</details>
+
+<details open>
+   <summary>
+      Deepchecks CI & Testing Management Quickstart
+   </summary>
+
+Deepchecks managed CI & Testing management is currently in closed preview.
+[Book a demo](https://deepchecks.com/book-demo/) for more information about the offering.
+
+<p align="center">
+   <img src="docs/source/_static/images/general/deepchecks-ci-checks.png" width="600">
+</p>ks.
    ~ Deepchecks is distributed under the terms of the GNU Affero General
    ~ Public License (version 3 or later).
    ~ You should have received a copy of the GNU Affero General Public License

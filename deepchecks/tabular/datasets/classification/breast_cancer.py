@@ -1,7 +1,94 @@
 # ----------------------------------------------------------------------------
-# Copyright (C) 2021-2023 Deepchecks (https://www.deepchecks.com)
-#
-# This file is part of Deepchecks.
+#- mean radius
+  - Feature
+  - mean radius
+- mean texture
+  - Feature
+  - mean texture
+- mean perimeter
+  - Feature
+  - mean perimeter
+- mean area
+  - Feature
+  - mean area
+- mean smoothness
+  - Feature
+  - mean smoothness
+- mean compactness
+  - Feature
+  - mean compactness
+- mean concavity
+  - Feature
+  - mean concavity
+- mean concave points
+  - Feature
+  - mean concave points
+- mean symmetry
+  - Feature
+  - mean symmetry
+- mean fractal dimension
+  - Feature
+  - mean fractal dimension
+- radius error
+  - Feature
+  - radius error
+- texture error
+  - Feature
+  - texture error
+- perimeter error
+  - Feature
+  - perimeter error
+- area error
+  - Feature
+  - area error
+- smoothness error
+  - Feature
+  - smoothness error
+- compactness error
+  - Feature
+  - compactness error
+- concavity error
+  - Feature
+  - concavity error
+- concave points error
+  - Feature
+  - concave points error
+- symmetry error
+  - Feature
+  - symmetry error
+- fractal dimension error
+  - Feature
+  - fractal dimension error
+- worst radius
+  - Feature
+  - worst radius
+- worst texture
+  - Feature
+  - worst texture
+- worst perimeter
+  - Feature
+  - worst perimeter
+- worst area
+  - Feature
+  - worst area
+- worst smoothness
+  - Feature
+  - worst smoothness
+- worst compactness
+  - Feature
+  - worst compactness
+- worst concavity
+  - Feature
+  - worst concavity
+- worst concave points
+  - Feature
+  - worst concave points
+- worst symmetry
+  - Feature
+  - worst symmetry
+- worst fractal dimension
+  - Feature
+  - worst fractal dimensionf Deepchecks.
 # Deepchecks is distributed under the terms of the GNU Affero General
 # Public License (version 3 or later).
 # You should have received a copy of the GNU Affero General Public License
