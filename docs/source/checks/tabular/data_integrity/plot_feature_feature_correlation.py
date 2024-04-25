@@ -24,16 +24,16 @@ This check works with 2 types of features: categorical and numerical, and uses a
 correlation for each combination of feature types:
 
 1. numerical-numerical: `Spearman's correlation coefficient <https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient>`__
-2. numerical-categorical: `Correlation ratio <https://en.wikipedia.org/wiki/Correlation_ratio>`__
-3. categorical-categorical: `Symmetric Theil's U <https://en.wikipedia.org/wiki/Uncertainty_coefficient>`__
-
-"""
-
 #%%
 # Imports
 # =======
 
 import pandas as pd
+
+"""
+- numerical-categorical: `Correlation ratio <https://en.wikipedia.org/wiki/Correlation_ratio>`__
+- categorical-categorical: `Symmetric Theil's U <https://en.wikipedia.org/wiki/Uncertainty_coefficient>`__
+"""
 from deepchecks.tabular.datasets.classification import adult
 from deepchecks.tabular.checks.data_integrity import FeatureFeatureCorrelation
 

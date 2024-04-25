@@ -77,8 +77,6 @@ class SimpleModelComparison(TrainTestCheck):
         Specify the list of classes to show in the report. If specified, n_to_show, show_only and metric_to_show_by
         are ignored.
     {additional_check_init_params:2*indent}
-    """
-
     _state: Dict[Hashable, Any] = {}
 
     def __init__(self,

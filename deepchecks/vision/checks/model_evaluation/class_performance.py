@@ -57,8 +57,6 @@ class ClassPerformance(TrainTestCheck):
         Specify the list of classes to show in the report. If specified, n_to_show, show_only and metric_to_show_by
         are ignored.
     {additional_check_init_params:2*indent}
-    """
-
     def __init__(self,
                  scorers: Union[Dict[str, Union[Callable, str]], List[Any]] = None,
                  n_to_show: int = 20,
