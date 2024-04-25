@@ -65,7 +65,6 @@ def text_data_fixture():
 #     match_text = r'Calculating the properties \[\'Toxicity\'\] on a large dataset may take a long time.' \
 #                  r' Consider using a smaller sample size or running this code on better hardware. Consider using a ' \
 #                  r'GPU or a similar device to run these properties.'
-#
 #     # Act
 #     with pytest.warns(UserWarning,
 #                       match=match_text):

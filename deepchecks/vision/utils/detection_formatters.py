@@ -120,11 +120,8 @@ def verify_bbox_format_notation(notation: str) -> Tuple[bool, List[str]]:
             if 'xmin' not in normalized_tokens and 'ymin' not in normalized_tokens:
                 normalized_tokens.extend(('xmin', 'ymin'))
             else:
-                normalized_tokens.extend(('xmax', 'ymax'))
-        else:
-            raise RuntimeError('Internal Error! Unreachable part of code reached')
-
-    return are_coordinates_normalized, normalized_tokens
+                normalized_tokens.extend(['xmax', 'ymax'])
+        return are_coordinates_normalized, normalized_tokens
 
 
 _BatchOfSamples = Iterable[

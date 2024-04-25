@@ -138,8 +138,7 @@ class _DummyModel:
                     return
                 else:
                     break
-        raise DeepchecksValueError('Data that has not been seen before passed for inference with static '
-                                   'predictions. Pass a real model to resolve this')
+        raise DeepchecksValueError('Data that has not been seen before passed for inference with static predictions. Pass a real model to resolve this')
 
     def _predict(self, data: pd.DataFrame):
         """Predict on given data by the data indexes."""
