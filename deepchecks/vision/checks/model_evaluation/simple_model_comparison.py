@@ -78,7 +78,6 @@ class SimpleModelComparison(TrainTestCheck):
         are ignored.
     {additional_check_init_params:2*indent}
     """
-
     _state: Dict[Hashable, Any] = {}
 
     def __init__(self,

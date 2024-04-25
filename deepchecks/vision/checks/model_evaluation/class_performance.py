@@ -58,7 +58,6 @@ class ClassPerformance(TrainTestCheck):
         are ignored.
     {additional_check_init_params:2*indent}
     """
-
     def __init__(self,
                  scorers: Union[Dict[str, Union[Callable, str]], List[Any]] = None,
                  n_to_show: int = 20,
