@@ -62,9 +62,7 @@ def load_dataset(
         A Dataset or VisionData instance representing COCO128 dataset
     """
     transforms = A.Compose([A.NoOp()], bbox_params=A.BboxParams(format='coco'))
-    coco_dataset = create_tf_dataset(train, n_samples, transforms)
-    if shuffle:
-        coco_dataset = coco_dataset.shuffle(128)
+    coco_dataset = create_tf_dataset(train, n_samples, transforms, shuffle=shuffle, shuffle_buffer_size=128)
 
     if object_type == 'Dataset':
         return coco_dataset

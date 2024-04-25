@@ -27,9 +27,9 @@ class FrequentSubstrings(SingleDatasetCheck):
     """Checks for frequent substrings in the dataset.
 
     Substrings of varying lengths (n-grams) are extracted from the dataset text samples.
-    The frequencies of these n-grams are calculated and only substrings exceeding a defined minimum length are retained.
-    The substrings are then sorted by their frequencies and the most frequent substrings are identified.
-    Finally, the substrings with the highest frequency and those surpassing a significance level are displayed.
+The frequencies of these n-grams are calculated and only substrings exceeding a defined minimum length are retained.
+The substrings are then sorted by their frequencies and the most frequent substrings are identified.
+Finally, the substrings with the highest frequency and those surpassing a significance level are displayed.
 
     Parameters
     ----------
