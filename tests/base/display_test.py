@@ -291,8 +291,7 @@ def test_check_failure_display():
     # Assert
     with patch('deepchecks.core.display.display') as mock:
         failure.display_check(as_widget=False)
-        mock.assert_called_once()
-
+        mock.assert_called_once_with()
 
 def test_check_failure_show():
     # Arrange
@@ -345,6 +344,7 @@ def test_check_failure_repr_mimebundle():
     )
 
 
+def test_check_failure_repr_html():
 def test_check_failure_repr_html():
     # Arrange
     failure = CheckFailure(DummyCheck(), Exception('error message'))

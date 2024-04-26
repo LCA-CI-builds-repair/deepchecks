@@ -198,14 +198,14 @@ class CocoSegmentationDataset(VisionDataset):
         train_len = int(self.TRAIN_FRACTION * len(images))
 
         if test_mode is True:
-            if self.train is True:
-                self.images = images[0:5] * 2
-                self.labels = labels[0:5] * 2
+            if self.train:
+                self.images = images[0:5]
+                self.labels = labels[0:5]
             else:
-                self.images = images[1:6] * 2
-                self.labels = labels[1:6] * 2
+                self.images = images[1:6]
+                self.labels = labels[1:6]
         else:
-            if self.train is True:
+            if self.train:
                 self.images = images[0:train_len]
                 self.labels = labels[0:train_len]
             else:

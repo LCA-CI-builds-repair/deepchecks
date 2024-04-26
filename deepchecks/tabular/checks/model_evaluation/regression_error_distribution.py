@@ -97,7 +97,7 @@ class RegressionErrorDistribution(SingleDatasetCheck):
                 nbins=self.n_bins,
                 title='Regression Error Distribution',
                 labels={'x': f'{dataset.label_name} prediction error', 'y': 'Count'},
-                height=500
+                height=500,
             )
 
             fig.add_vline(x=np.median(diff), line_dash='dash', line_color='purple', annotation_text='median',

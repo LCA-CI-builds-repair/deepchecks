@@ -122,8 +122,6 @@ ds.data.drop('Is Ripe', axis=1, inplace=True)
 result = single_value_with_condition.run(ds)
 result.show()
 
-#%%
-
 # Alternatively we can fix the dataframe directly, and create a new dataset.
 # Let's fix also the duplicate values:
 dirty_df.drop_duplicates(inplace=True)

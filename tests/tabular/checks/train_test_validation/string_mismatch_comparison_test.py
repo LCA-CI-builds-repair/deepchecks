@@ -172,7 +172,7 @@ def test_fi_n_top(diabetes_split_dataset_and_model):
     train.data.loc[train.data.index % 2 == 0, 'age'] = 'aaa'
     val.data.loc[val.data.index % 2 == 1, 'age'] = 'aaa!!'
     train.data.loc[train.data.index % 2 == 0, 'bmi'] = 'aaa'
-    val.data.loc[val.data.index % 2 == 1, 'bmi'] = 'aaa!!'
+    val.data.loc[val.data.index % 2 == 1, 'bmi'] = 'updated_value'
     train.data.loc[train.data.index % 2 == 0, 'bp'] = 'aaa'
     val.data.loc[val.data.index % 2 == 1, 'bp'] = 'aaa!!'
     train.data.loc[train.data.index % 2 == 0, 'sex'] = 'aaa'
