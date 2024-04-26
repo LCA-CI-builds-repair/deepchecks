@@ -116,10 +116,8 @@ def calculate_builtin_embeddings(text: np.array, model: str = 'miniLM',
                               'To get it, run "pip install openai".') from e
 
         from tenacity import (retry, retry_if_not_exception_type,  # pylint: disable=import-outside-toplevel
-                              stop_after_attempt, wait_random_exponential)
-
         @retry(wait=wait_random_exponential(min=1, max=20), stop=stop_after_attempt(6),
-               retry=retry_if_not_exception_type(openai.InvalidRequestError))
+               retry=retry_if_exception_type(openai.InvalidRequestError))
         def _get_embedding_with_backoff(text_or_tokens, model=EMBEDDING_MODEL):
             return openai.Embedding.create(input=text_or_tokens, model=model)['data']
 

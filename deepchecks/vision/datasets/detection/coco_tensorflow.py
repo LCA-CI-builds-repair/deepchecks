@@ -53,8 +53,8 @@ def load_dataset(
         type of the return value. If 'Dataset', :obj:`deepchecks.vision.VisionData`
         will be returned, otherwise :obj:`tf.data.Dataset`.
     n_samples : int, optional
-        Number of samples to load. Return the first n_samples if shuffle
-        is False otherwise selects n_samples at random. If None, returns all samples.
+    Number of samples to load. Return the first n_samples if shuffle
+    is False otherwise selects n_samples at random. If None, returns all samples.
 
     Returns
     -------
@@ -64,7 +64,7 @@ def load_dataset(
     transforms = A.Compose([A.NoOp()], bbox_params=A.BboxParams(format='coco'))
     coco_dataset = create_tf_dataset(train, n_samples, transforms)
     if shuffle:
-        coco_dataset = coco_dataset.shuffle(128)
+        coco_dataset = coco_dataset.shuffle(128, reshuffle_each_iteration=True)
 
     if object_type == 'Dataset':
         return coco_dataset
