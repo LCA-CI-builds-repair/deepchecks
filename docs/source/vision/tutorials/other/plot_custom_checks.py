@@ -154,8 +154,6 @@ result.show()
 # defined earlier we can use the “value” property on the result.
 
 result.value
-
-
 # %% To see code references for more complex checks (that can receive parameters etc.), check out any of your
 # favorite checks from our :doc:`API ref <../../../api/deepchecks.vision>`.
 
@@ -167,10 +165,10 @@ result.value
 # can pass objects for display to the CheckResult. Objects for display should be of type: html string, dataframe or a
 # function that plots a graph. Let’s define a graph that will be displayed using `Plotly <https://plotly.com/>`_. We
 # will inherit from the original check to shorten the code an update only the compute method.
+# function that plots a graph. Let’s define a graph that will be displayed using `Plotly <https://plotly.com/>`_. We
+# will inherit from the original check to shorten the code an update only the compute method.
 #
 # **Good to know: ``display`` can receive a single object to display or a list of objects**
-
-import pandas as pd
 import plotly.express as px
 
 

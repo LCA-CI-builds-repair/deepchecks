@@ -10,6 +10,7 @@
 #
 
 """This module contains the code that handles users' use of the deprecated TrainTestFeatureDrift.
+"""
 
 Its name was changed to FeatureDrift (removed the TrainTest prefix)
 """

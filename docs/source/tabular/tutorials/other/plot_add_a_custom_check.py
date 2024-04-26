@@ -97,7 +97,6 @@ result
 # we have defined earlier we can use the "value" property on the result.
 
 #%%
-
 result.value
 
 #%%

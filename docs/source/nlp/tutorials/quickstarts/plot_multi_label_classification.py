@@ -16,7 +16,6 @@ refer to our :ref:`Multiclass Quickstart <nlp__multiclass_quickstart>`. We will 
 3. `Running individual checks <#running-individual-checks>`__
 
 To run deepchecks for NLP, you need the following for both your train and test data:
-
 1. Your text data - a list of strings, each string is a single sample (can be a sentence, paragraph, document, etc.).
 2. Your labels and prediction in the :ref:`correct format <nlp__supported_text_classification>` (Optional).
 3. :ref:`Metadata <nlp__metadata_guide>`, :ref:`Properties <nlp__properties_guide>`
