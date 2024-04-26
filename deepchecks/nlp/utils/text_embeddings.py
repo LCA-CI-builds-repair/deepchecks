@@ -5,34 +5,30 @@
 # Deepchecks is distributed under the terms of the GNU Affero General
 # Public License (version 3 or later).
 # You should have received a copy of the GNU Affero General Public License
-# along with Deepchecks.  If not, see <http://www.gnu.org/licenses/>.
+# along with Deepchecks. If not, see <http://www.gnu.org/licenses/>.
 # ----------------------------------------------------------------------------
 #
 """Utils module for calculating embeddings for text."""
 import sys
 import re
-import warnings
-from itertools import islice
 from typing import Optional
 
 import numpy as np
 from tqdm import tqdm
 
-EMBEDDING_MODEL = 'text-embedding-ada-002'
+EMBEDDING_MODEL = "text-embedding-ada-002"
 EMBEDDING_DIM = 1536
 EMBEDDING_CTX_LENGTH = 8191
-EMBEDDING_ENCODING = 'cl100k_base'
+EMBEDDING_ENCODING = "cl100k_base"
 
-PATTERN_SPECIAL_CHARS = re.compile(r"[!@#$%^&*()_+{}|:\"<>?~`\-=\[\]\;',.\/]")
-PATTERN_SPACE_CHARS = re.compile(r'\s')
-PATTERN_BR_CHARS = re.compile(r'<br />')
-
+PATTERN_SPECIAL_CHARS = re.compile(r"[!@#$%^&*()_+{}|:\"<>?~`=\\[\\]\\;',.\\/]")
+PATTERN_SPACE_CHARS = re.compile(r"\\s")
+PATTERN_BR_CHARS = re.compile(r"<br />")
 
 def batched(iterable, n):
     """Batch data into tuples of length n. The last batch may be shorter."""
-    # batched('ABCDEFG', 3) --> ABC DEF G
     if n < 1:
-        raise ValueError('n must be at least one')
+        raise ValueError("n must be at least one")
     it = iter(iterable)
     while True:
         batch = tuple(islice(it, n))
@@ -40,11 +36,8 @@ def batched(iterable, n):
             return
         yield batch
 
-
-def encode_text(text, encoding_name):
+def encode_text(text: str, encoding_name: str) -> str:
     """Encode tokens with the given encoding."""
-    # tiktoken.get_encoding is only available in python 3.8 and above.
-    # This means that for python < 3.8, the batching is just using chunk_length chars each time.
     if sys.version_info >= (3, 8):
         import tiktoken  # pylint: disable=import-outside-toplevel
         encoding = tiktoken.get_encoding(encoding_name)
@@ -52,17 +45,15 @@ def encode_text(text, encoding_name):
     else:
         return text
 
-
 def iterate_batched(tokenized_text, chunk_length):
     """Chunk text into tokens of length chunk_length."""
     chunks_iterator = batched(tokenized_text, chunk_length)
     yield from chunks_iterator
 
-
-def calculate_builtin_embeddings(text: np.array, model: str = 'miniLM',
-                                 file_path: Optional[str] = 'embeddings.npy',
+def calculate_builtin_embeddings(text: np.array, model: str = "miniLM",
+                                 file_path: Optional[str] = "embeddings.npy",
                                  device: Optional[str] = None,
-                                 long_sample_behaviour: str = 'average+warn',
+                                 long_sample_behaviour: str = "average+warn",
                                  open_ai_batch_size: int = 500) -> np.array:
     """
     Get the built-in embeddings for the dataset.

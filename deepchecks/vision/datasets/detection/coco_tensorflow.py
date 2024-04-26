@@ -53,8 +53,8 @@ def load_dataset(
         type of the return value. If 'Dataset', :obj:`deepchecks.vision.VisionData`
         will be returned, otherwise :obj:`tf.data.Dataset`.
     n_samples : int, optional
-        Number of samples to load. Return the first n_samples if shuffle
-        is False otherwise selects n_samples at random. If None, returns all samples.
+# Number of samples to load. Return the first n_samples if shuffle
+# is False; otherwise, select n_samples at random. If None, return all samples.
 
     Returns
     -------
