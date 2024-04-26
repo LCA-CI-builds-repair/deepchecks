@@ -16,19 +16,13 @@
     // The name of the project being benchmarked
     "project": "deepchecks",
 
-    // The project's homepage
     "project_url": "",
 
-    // The URL or local path of the source code repository for the
-    // project being benchmarked
     "repo": "..",
 
-    // The Python project's subdirectory in your repo.  If missing or
-    // the empty string, the project is assumed to be located at the root
-    // of the repository.
-     "repo_subdir": "",
+    "repo_subdir": "",
 
-    // Customizable commands for building, installing, and
+    "repo_subdir": "",
     // uninstalling the project. See asv.conf.json documentation.
     //
     // "install_command": ["in-dir={env_dir} python -mpip install {wheel_file}"],

@@ -97,10 +97,8 @@ result
 # we have defined earlier we can use the "value" property on the result.
 
 #%%
-
-result.value
-
 #%%
+
 # To see code references for more complex checks (that can receive parameters
 # etc.), check out any of your favorite checks from our `API Reference <../../../api/deepchecks.tabular.checks.html>`__.
 

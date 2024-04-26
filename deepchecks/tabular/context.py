@@ -135,9 +135,10 @@ class _DummyModel:
             if set(data.index).issubset(set(feature_df.index)):
                 sample_data = np.unique(np.random.choice(data.index, 30))
                 if feature_df.loc[sample_data].equals(data.loc[sample_data]):
-                    return
-                else:
-                    break
+                    if data.equals(self.model_data):
+                        return
+                    else:
+                        break
         raise DeepchecksValueError('Data that has not been seen before passed for inference with static '
                                    'predictions. Pass a real model to resolve this')
 

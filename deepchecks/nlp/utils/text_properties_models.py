@@ -203,7 +203,6 @@ def _get_fasttext_model(models_storage: Union[pathlib.Path, str, None] = None):
 
     # This weird code is to suppress a warning from fasttext about a deprecated function
     try:
-        fasttext.FastText.eprint = lambda *args, **kwargs: None
         fasttext_model = fasttext.load_model(str(model_path))
     except Exception as exp:
         raise exp

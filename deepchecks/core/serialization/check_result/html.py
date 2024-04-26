@@ -75,14 +75,12 @@ class CheckResultSerializer(HtmlSerializer['check_types.CheckResult']):
             whether to include requirejs library into output or not
         include_plotlyjs : bool, default True
             whether to include plotlyjs library into output or not
-        connected : bool, default True
-            whether to use CDN to load js libraries or to inject their code into output
-        plotly_to_image : bool, default False
-            whether to transform Plotly figure instance into static image or not
-        is_for_iframe_with_srcdoc : bool, default False
-            anchor links, in order to work within iframe require additional prefix
-            'about:srcdoc'. This flag tells function whether to add that prefix to
-            the anchor links or not
+        connected: bool, default True
+            Whether to use CDN to load JS libraries or to inject their code into the output.
+        plotly_to_image: bool, default False
+            Whether to transform Plotly figure instance into a static image or not.
+        is_for_iframe_with_srcdoc: bool, default False
+            Anchor links, to work within an iframe, require an additional prefix 'about:srcdoc'. This flag tells the function whether to add that prefix to the anchor links or not.
 
         Returns
         -------

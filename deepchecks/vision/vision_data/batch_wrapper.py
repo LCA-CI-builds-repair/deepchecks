@@ -6,8 +6,6 @@
 # Public License (version 3 or later).
 # You should have received a copy of the GNU Affero General Public License
 # along with Deepchecks.  If not, see <http://www.gnu.org/licenses/>.
-# ----------------------------------------------------------------------------
-#
 """Contains code for BatchWrapper."""
 from typing import Dict, List, Optional, Union
 

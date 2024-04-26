@@ -57,15 +57,14 @@ def text_data_fixture():
 
 
 # TODO: Fix test (problem with pytorch versions)
-# @patch('deepchecks.nlp.utils.text_properties.run_available_kwargs', mock_fn)
-# def test_that_warning_is_shown_for_big_datasets():
-#     # Arrange
-#     raw_text = ['This is a test sentence.'] * 20_000
-#
-#     match_text = r'Calculating the properties \[\'Toxicity\'\] on a large dataset may take a long time.' \
-#                  r' Consider using a smaller sample size or running this code on better hardware. Consider using a ' \
-#                  r'GPU or a similar device to run these properties.'
-#
+@patch('deepchecks.nlp.utils.text_properties.run_available_kwargs', mock_fn)
+def test_that_warning_is_shown_for_big_datasets():
+    # Arrange
+    raw_text = ['This is a test sentence.'] * 20_000
+
+    match_text = r'Calculating the properties \[\'Toxicity\'\] on a large dataset may take a long time.' \
+                 r' Consider using a smaller sample size or running this code on better hardware. Consider using a ' \
+                 r'GPU or a similar device to run these properties.'
 #     # Act
 #     with pytest.warns(UserWarning,
 #                       match=match_text):

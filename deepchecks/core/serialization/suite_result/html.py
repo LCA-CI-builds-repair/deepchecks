@@ -65,14 +65,12 @@ class SuiteResultSerializer(HtmlSerializer['suite.SuiteResult']):
             whether to return a fully independent HTML document or only CheckResult content
         include_requirejs : bool, default False
             whether to include requirejs library into output or not
-        include_plotlyjs : bool, default True
-            whether to include plotlyjs library into output or not
-        connected : bool, default True
-            whether to use CDN to load js libraries or to inject their code into output
-        is_for_iframe_with_srcdoc : bool, default False
-            anchor links, in order to work within iframe require additional prefix
-            'about:srcdoc'. This flag tells function whether to add that prefix to
-            the anchor links or not
+        include_plotlyjs: bool, default True
+            Whether to include the plotlyjs library into the output or not.
+        connected: bool, default True
+            Whether to use CDN to load JS libraries or to inject their code into the output.
+        is_for_iframe_with_srcdoc: bool, default False
+            Anchor links, to work within an iframe, require an additional prefix 'about:srcdoc'. This flag tells the function whether to add that prefix to the anchor links or not.
         **kwargs :
             all other key-value arguments will be passed to the CheckResult/CheckFailure
             serializers

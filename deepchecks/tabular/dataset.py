@@ -81,13 +81,11 @@ class Dataset:
     datetime_args : t.Optional[t.Dict] , default: None
         pandas.to_datetime args used for conversion of the datetime column.
         (look at https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html for more documentation)
-    max_categorical_ratio : float , default: 0.01
-        The max ratio of unique values in a column in order for it to be inferred as a
-        categorical feature.
-    max_categories : int , default: None
-        The maximum number of categories in a column in order for it to be inferred as a categorical
-        feature. if None, uses is_categorical default inference mechanism.
-    label_type : str , default: None
+    max_categorical_ratio: float, default: 0.01
+        The max ratio of unique values in a column in order for it to be inferred as a categorical feature.
+    max_categories: int, default: None
+        The maximum number of categories in a column in order for it to be inferred as a categorical feature. If None, uses is_categorical default inference mechanism.
+    label_type: str, default: None
         Used to determine the task type. If None, inferred when running a check based on label column and model.
         Possible values are: 'multiclass', 'binary' and 'regression'.
     """
