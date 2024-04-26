@@ -8,7 +8,9 @@
 # along with Deepchecks.  If not, see <http://www.gnu.org/licenses/>.
 # ----------------------------------------------------------------------------
 #
-"""Contains code for BatchWrapper."""
+"""
+Contains code for BatchWrapper.
+"""
 from typing import Dict, List, Optional, Union
 
 import numpy as np

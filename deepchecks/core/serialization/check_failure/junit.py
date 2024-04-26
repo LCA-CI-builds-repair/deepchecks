@@ -48,11 +48,12 @@ class CheckFailureSerializer(JunitSerializer['check_types.CheckFailure']):
         </failure>
 
         Parameters
+        """
         ----------
         failure_tag : str
-            Set the tests that fail as either skipped or failure, this allows CI/CD systems to ignore failed tests if
-            development does not want them to stop the build.
-
+            Set the tests that fail as either skipped or failure, allowing CI/CD systems to handle failed tests.
+            Accepted values are 'failure' or 'skipped'.
+            
         Returns
         -------
         ET.Element

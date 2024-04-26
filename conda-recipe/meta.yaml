@@ -87,7 +87,6 @@ test:
     - deepchecks.utils
     - tests
     - tests.checks
-    - tests.checks.distribution
     - tests.suites
     - tests.utils
 

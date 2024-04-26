@@ -206,6 +206,7 @@ class SuiteResultSerializer(JunitSerializer['suite.SuiteResult']):
         """Iterate over the test cases and serialize them into test suites.
 
         Parameters
+        """
         ----------
         encoding : str
             What format to encode the output str into.

@@ -8,7 +8,9 @@
 # along with Deepchecks.  If not, see <http://www.gnu.org/licenses/>.
 # ----------------------------------------------------------------------------
 #
-"""Contains unit tests for the new_label_train_validation check"""
+"""
+Contains unit tests for the new_label_train_validation check
+"""
 
 import pandas as pd
 from hamcrest import assert_that, calling, equal_to, greater_than, has_items, has_length, raises

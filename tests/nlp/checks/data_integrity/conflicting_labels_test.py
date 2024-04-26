@@ -117,7 +117,7 @@ def classification_dataset_with_conflicts() -> ProblematicDataset:
                     "Explicit, is better than implicit!",
                 ]
             ),
-            AmbiguousDuplicatVariant(
+            AmbiguousDuplicateVariant(
                 labels=['2', '0'],
                 sample_ids=[6, 10],
                 text=[
@@ -153,7 +153,7 @@ def multilabel_dataset_with_conflicts() -> ProblematicDataset:
         ambiguous_samples=[
             # NOTE:
             # tests depend on items order in this list
-            AmbiguousDuplicatVariant(
+            AmbiguousDuplicateVariant(
                 labels=[(1,), (1, 2)],
                 sample_ids=[2, 4],
                 text=[

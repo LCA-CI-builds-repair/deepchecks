@@ -184,5 +184,5 @@ def test_condition_error_ratio_not_greater_than_not_passed_0_max(diabetes_split_
     assert_that(result, has_items(
         equal_condition_result(is_pass=False,
                                name='Systematic error ratio lower than 0',
-                               details='Found systematic error to rmse ratio of 1.40E-4')
+                               details='Found systematic error to RMSE ratio of 1.40E-4')
     ))

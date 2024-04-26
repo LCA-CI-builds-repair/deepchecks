@@ -97,46 +97,45 @@ Description:
       - mean compactness
     * - mean concavity
       - Feature
-      - mean concavity
-    * - mean concave points
+    * - mean concavity
       - Feature
-      - mean concave points
+        - mean concave points
     * - mean symmetry
       - Feature
-      - mean symmetry
+        - mean symmetry
     * - mean fractal dimension
       - Feature
-      - mean fractal dimension
+        - mean fractal dimension
     * - radius error
       - Feature
-      - radius error
+        - radius error
     * - texture error
       - Feature
-      - texture error
+        - texture error
     * - perimeter error
       - Feature
-      - perimeter error
+        - perimeter error
     * - area error
       - Feature
-      - area error
+        - area error
     * - smoothness error
       - Feature
-      - smoothness error
+        - smoothness error
     * - compactness error
       - Feature
-      - compactness error
+        - compactness error
     * - concavity error
       - Feature
-      - concavity error
+        - concavity error
     * - concave points error
       - Feature
-      - concave points error
+        - concave points error
     * - symmetry error
       - Feature
-      - symmetry error
+        - symmetry error
     * - fractal dimension error
       - Feature
-      - fractal dimension error
+        - fractal dimension error
     * - worst radius
       - Feature
       - worst radius

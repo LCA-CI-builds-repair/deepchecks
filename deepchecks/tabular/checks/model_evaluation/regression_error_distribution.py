@@ -22,10 +22,8 @@ from deepchecks.tabular import Context, SingleDatasetCheck
 from deepchecks.utils.strings import format_number
 
 __all__ = ['RegressionErrorDistribution']
-
-
 class RegressionErrorDistribution(SingleDatasetCheck):
-    """Check for systematic error and abnormal shape in the regression error distribution.
+    """Check for systematic error and abnormal shape in the regression error distribution."""
 
     The check shows the distribution of the regression error, and enables to set conditions on two
     of the distribution parameters: Systematic error and Kurtosis value.
@@ -94,10 +92,11 @@ class RegressionErrorDistribution(SingleDatasetCheck):
                                     n_smallest_diff], axis=1)
             fig = px.histogram(
                 x=diff.values,
+            fig = px.histogram(
+                x=diff.values,
                 nbins=self.n_bins,
                 title='Regression Error Distribution',
                 labels={'x': f'{dataset.label_name} prediction error', 'y': 'Count'},
-                height=500
             )
 
             fig.add_vline(x=np.median(diff), line_dash='dash', line_color='purple', annotation_text='median',

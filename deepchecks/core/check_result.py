@@ -174,13 +174,13 @@ class CheckResult(BaseCheckResult, DisplayableResult):
         """Return priority of the current result.
 
         This value is primarly used to determine suite output order.
-        The logic is next:
+        The logic is as follows:
 
         * if at least one condition did not pass and is of category 'FAIL', return 1.
         * if at least one condition did not pass and is of category 'WARN', return 2.
         * if at least one condition did not pass and is of category 'ERROR', return 3.
         * if all conditions passed, return 4.
-        * if check result do not have assigned conditions, return 5.
+        * if the check result does not have assigned conditions, return 5.
 
         Returns
         -------

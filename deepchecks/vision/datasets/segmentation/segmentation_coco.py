@@ -199,17 +199,11 @@ class CocoSegmentationDataset(VisionDataset):
 
         if test_mode is True:
             if self.train is True:
-                self.images = images[0:5] * 2
-                self.labels = labels[0:5] * 2
+                self.images = images[:5] * 2 if self.train else images[1:6] * 2
+                self.labels = labels[:5] * 2 if self.train else labels[1:6] * 2
             else:
-                self.images = images[1:6] * 2
-                self.labels = labels[1:6] * 2
-        else:
-            if self.train is True:
-                self.images = images[0:train_len]
-                self.labels = labels[0:train_len]
-            else:
-                self.images = images[train_len:]
+                self.images = images[:train_len] if self.train else images[train_len:]
+                self.labels = labels[:train_len] if self.train else labels[train_len:]
                 self.labels = labels[train_len:]
 
     def __getitem__(self, idx: int) -> t.Tuple[torch.Tensor, torch.Tensor]:
@@ -376,8 +370,10 @@ _ORIG_LABEL_MAP = {
 }
 
 # Pascal VOC label map:
-LABEL_MAP = {0: 'background', 1: 'airplane', 2: 'bicycle', 3: 'bird', 4: 'boat', 5: 'bottle', 6: 'bus', 7: 'car',
-             8: 'cat', 9: 'chair', 10: 'cow', 11: 'dining table', 12: 'dog', 13: 'horse', 14: 'motorcycle',
+{
+    77: 'teddy bear',
+    78: 'hair drier',
+}
              15: 'person', 16: 'potted plant', 17: 'sheep', 18: 'couch', 19: 'train', 20: 'tv'}
 
 COCO_TO_PASCAL_VOC = {
