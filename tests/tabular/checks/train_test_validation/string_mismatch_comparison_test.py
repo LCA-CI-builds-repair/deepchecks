@@ -172,15 +172,15 @@ def test_fi_n_top(diabetes_split_dataset_and_model):
     train.data.loc[train.data.index % 2 == 0, 'age'] = 'aaa'
     val.data.loc[val.data.index % 2 == 1, 'age'] = 'aaa!!'
     train.data.loc[train.data.index % 2 == 0, 'bmi'] = 'aaa'
-    val.data.loc[val.data.index % 2 == 1, 'bmi'] = 'aaa!!'
-    train.data.loc[train.data.index % 2 == 0, 'bp'] = 'aaa'
-    val.data.loc[val.data.index % 2 == 1, 'bp'] = 'aaa!!'
-    train.data.loc[train.data.index % 2 == 0, 'sex'] = 'aaa'
-    val.data.loc[val.data.index % 2 == 1, 'sex'] = 'aaa!!'
+    test_dataset.data.loc[test_dataset.data.index % 2 == 1, 'bmi'] = 'aaa!!'
+    train_dataset.data.loc[train_dataset.data.index % 2 == 0, 'bp'] = 'aaa'
+    test_dataset.data.loc[test_dataset.data.index % 2 == 1, 'bp'] = 'aaa!!'
+    train_dataset.data.loc[train_dataset.data.index % 2 == 0, 'sex'] = 'aaa'
+    test_dataset.data.loc[test_dataset.data.index % 2 == 1, 'sex'] = 'aaa!!'
     # Arrange
     check = StringMismatchComparison(n_top_columns=3)
     # Act
-    result = check.run(test_dataset=train, train_dataset=val)
+    result = check.run(test_dataset=train_dataset, train_dataset=test_dataset)
     # Assert - The display table is transposed so check length of columns
     assert_that(result.display[1].columns, has_length(3))
 
