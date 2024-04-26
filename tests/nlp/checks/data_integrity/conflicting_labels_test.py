@@ -163,8 +163,6 @@ def multilabel_dataset_with_conflicts() -> ProblematicDataset:
             )
         ],
     )
-
-
 # =================
 # ----- Tests -----
 # =================

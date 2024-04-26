@@ -95,8 +95,6 @@ result.show()
 # In the heatmap display we can see model performance on the weakest segments and their environment with respect to the
 # two features that are relevant to the segment. In order to get the full list of weak segments found we will inspect
 # the ``result.value`` attribute. Shown below are the 3 segments with the worst performance.
-
-
 result.value['weak_segments_list'].head(3)
 
 #%%
