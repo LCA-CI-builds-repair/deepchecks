@@ -162,7 +162,7 @@ class UnknownTokens(SingleDatasetCheck):
             # see: https://github.com/huggingface/transformers/issues/5486
             with contextlib.redirect_stdout(PrintFilter(sys.stdout)):
                 tokenized_samples = self.tokenizer(list(samples), return_offsets_mapping=True,
-                                                   is_split_into_words=False, truncation=False)
+is_split_into_words=False, truncation=False
 
             for idx, (tokens, offsets_mapping, sample) in zip(indices, zip(tokenized_samples['input_ids'],
                                                                            tokenized_samples['offset_mapping'],
@@ -207,9 +207,9 @@ class UnknownTokens(SingleDatasetCheck):
 
         # Calculate percentages for each category
         other_words_count = sum(all_unknown_words_counter[word] for word in other_words)
-        other_words_percentage = (other_words_count * 1. / total_words) * 100.
+        other_words_percentage = (other_words_count / total_words) * 100
         labels = most_common_unknown_words
-        percentages = [all_unknown_words_counter[word] * 1. / total_words * 100. for word in most_common_unknown_words]
+        percentages = [all_unknown_words_counter[word] / total_words * 100 for word in most_common_unknown_words]
 
         # Add "Other Unknown Words" and "Known Words" categories
         if other_words_percentage > 0:

@@ -188,8 +188,8 @@ def calculate_builtin_embeddings(text: np.array, model: str = 'miniLM',
                     # while loop to get all chunks for this sample
                     while idx < len(chunk_lens) and sum(text_lens) < len(tokens_in_sample):
                         text_embeddings.append(chunk_embeddings[idx])
-                        text_lens.append(chunk_lens[idx])
-                        idx += 1
+                text_lens.append(chunk_lens[idx])
+                idx += 1
 
                     if sum(text_lens) == 0:
                         text_embedding = np.ones((EMBEDDING_DIM, )) * np.nan

@@ -138,7 +138,7 @@ class UnusedFeatures(SingleDatasetCheck):
                 display_feature_df = pd.concat(
                     [feature_df.iloc[:(last_important_feature_index + 1)].head(self.n_top_fi_to_show),
                      unviable_feature_df.iloc[:last_variable_feature_index].head(self.n_top_unused_to_show)],
-                    axis=0)
+                axis=0)
 
                 fig = go.Figure()
                 fig.add_trace(go.Bar(
@@ -171,7 +171,8 @@ class UnusedFeatures(SingleDatasetCheck):
                 display_list = [
                     'Features above the line are a sample of the most important features, while the features '
                     'below the line are the unused features with highest variance, as defined by check'
-                    ' parameters', fig]
+                    ' parameters', fig
+                ]
             else:
                 display_list = []
 
@@ -189,6 +190,8 @@ class UnusedFeatures(SingleDatasetCheck):
                     [] if unviable_feature_df.empty
                     else unviable_feature_df.index[last_variable_feature_index:].values.tolist()
                 )
+            }
+        }
             }}
 
         return CheckResult(return_value, header='Unused Features', display=display_list)

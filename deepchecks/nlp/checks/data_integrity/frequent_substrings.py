@@ -27,9 +27,33 @@ class FrequentSubstrings(SingleDatasetCheck):
     """Checks for frequent substrings in the dataset.
 
     Substrings of varying lengths (n-grams) are extracted from the dataset text samples.
-    The frequencies of these n-grams are calculated and only substrings exceeding a defined minimum length are retained.
-    The substrings are then sorted by their frequencies and the most frequent substrings are identified.
-    Finally, the substrings with the highest frequency and those surpassing a significance level are displayed.
+import numpy as np
+import pandas as pd
+
+def calculate_ngram_frequencies(text, n):
+    # Function to calculate frequencies of n-grams in the given text
+    # Implement the logic for calculating n-gram frequencies here
+    pass
+
+def filter_substrings_by_length(substrings, min_length):
+    # Function to filter substrings based on minimum length
+    # Implement the logic for filtering substrings here
+    pass
+
+def sort_substrings_by_frequency(substrings):
+    # Function to sort substrings by their frequencies
+    # Implement the logic for sorting substrings here
+    pass
+
+def identify_most_frequent_substrings(substrings, top_n):
+    # Function to identify the most frequent substrings
+    # Implement the logic for identifying most frequent substrings here
+    pass
+
+def display_substrings(substrings, significance_level):
+    # Function to display substrings with the highest frequency and surpassing a significance level
+    # Implement the logic for displaying substrings here
+    pass
 
     Parameters
     ----------
@@ -419,19 +443,29 @@ class FrequentSubstrings(SingleDatasetCheck):
             })
 
             df = self._filter_peak_and_significant(df)
+import numpy as np
+import pandas as pd
 
-            if self.n_samples < len(dataset):
-                for substring_index, substring in enumerate(df['Text']):
-                    indexes = []
-                    for sample_index, sample in enumerate(dataset):
-                        if substring in sample:
-                            indexes.append(sample_index)
-                    df.at[substring_index, 'Sample IDs'] = indexes
-                    df.at[substring_index, 'Frequency'] = len(indexes) / len(dataset)
-                df = df.sort_values(by=['Frequency', 'Text'], ascending=False)
+class CheckResult:
+    def __init__(self, value, display):
+        self.value = value
+        self.display = display
 
-            df['Number of Samples'] = df['Sample IDs'].str.len()
-            df['% In data'] = df['Frequency'].apply(format_percent)
+class FrequentSubstringsCheck:
+    def __init__(self):
+        pass
+
+    def add_condition_zero_result(self, min_substrings: int = 1):
+        """Add condition - check that the amount of frequent substrings is below the minimum.
+
+        Parameters
+        ----------
+        min_substrings : int , default: 1
+            minimal amount of frequent substrings allowed.
+        """
+        value = None
+        display = None
+        return CheckResult(value=value, display=display)
 
             value = df.to_dict()
             percent_of_frequent = len(set(sum(df['Sample IDs'], [])))/len(dataset)

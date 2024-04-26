@@ -153,9 +153,9 @@ def test_condition_no_variants_fail():
             is_pass=False,
             name='No string variants',
             details='Found 1 out of 1 columns with amount of variants above threshold: '
-                    '{\'col1\': [\'deep\', \'foo\']}',
-            category=ConditionCategory.WARN)
-    ))
+                    '{"col1": ["deep", "foo"]}',
+            category=ConditionCategory.WARN
+        )
 
 
 def test_condition_no_variants_pass():
@@ -169,8 +169,8 @@ def test_condition_no_variants_pass():
     assert_that(result, has_items(
         equal_condition_result(is_pass=True,
                                details='Passed for 1 relevant column',
-                               name='No string variants')
-    ))
+                               name='No string variants'
+                           )
 
 
 def test_condition_percent_variants_no_more_than_fail():

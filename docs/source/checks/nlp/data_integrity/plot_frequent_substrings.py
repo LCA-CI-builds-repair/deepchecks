@@ -3,7 +3,7 @@
 .. _nlp__frequent_substrings:
 
 Frequent Substrings
-********************
+====================
 
 This notebook provides an overview for using and understanding the frequent substrings check:
 
@@ -47,21 +47,18 @@ texts = [
 
 dataset = TextData(texts)
 
-#%%
 # Run the Check
 # =============
 
 FrequentSubstrings().run(dataset)
 
-# %%
 # Define a Condition
 # ==================
-#
-# Now, we define a condition that enforces that ratio of frequent substrings will be smaller than 0.05
+
+# Now, we define a condition that enforces that the ratio of frequent substrings will be smaller than 0.05
 # for all frequent substrings in the data. A condition is deepchecks' way to validate model and data quality,
-# and let you know if anything goes wrong.
+# and lets you know if anything goes wrong.
 
 check = FrequentSubstrings()
-check.add_condition_zero_result()
-result = check.run(dataset)
-result.show(show_additional_outputs=False)
+check = FrequentSubstrings()
+check.add_condition_zero_result(min_substrings=1)

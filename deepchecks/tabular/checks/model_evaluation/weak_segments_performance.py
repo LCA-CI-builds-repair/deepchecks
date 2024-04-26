@@ -162,11 +162,13 @@ class WeakSegmentsPerformance(SingleDatasetCheck, WeakSegmentAbstract):
             feature_rank = np.asarray(relevant_features, dtype='object')
 
         # Running the logic
-        weak_segments = self._weak_segments_search(data=encoded_dataset.data, score_per_sample=score_per_sample,
-                                                   label_col=dataset_subset.label_col,
-                                                   feature_rank_for_search=feature_rank,
-                                                   dummy_model=dummy_model, scorer=scorer,
-                                                   multiple_segments_per_feature=self.multiple_segments_per_feature)
+weak_segments = self._weak_segments_search(data=encoded_dataset.data,
+                                           score_per_sample=score_per_sample,
+                                           label_col=dataset_subset.label_col,
+                                           feature_rank_for_search=feature_rank,
+                                           dummy_model=dummy_model,
+                                           scorer=scorer,
+                                           multiple_segments_per_feature=self.multiple_segments_per_feature)
 
         if len(weak_segments) == 0:
             raise DeepchecksProcessError('WeakSegmentsPerformance was unable to train an error model to find weak '

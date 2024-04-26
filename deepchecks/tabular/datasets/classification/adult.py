@@ -156,7 +156,7 @@ def load_data(data_format: str = 'Dataset', as_train_test: bool = True) -> \
     """
     if not as_train_test:
         dataset = pd.read_csv(_FULL_DATA_URL, names=_FEATURES + [_target])
-        dataset['income'] = dataset['income'].str.replace('.', '', regex=True)      # fix label inconsistency
+        dataset['income'] = dataset['income'].str.replace('.', '', regex=False)  # Fix label inconsistency
 
         if data_format == 'Dataset':
             dataset = Dataset(dataset, label=_target, cat_features=_CAT_FEATURES)
@@ -168,7 +168,7 @@ def load_data(data_format: str = 'Dataset', as_train_test: bool = True) -> \
     else:
         train = pd.read_csv(_TRAIN_DATA_URL, names=_FEATURES + [_target])
         test = pd.read_csv(_TEST_DATA_URL, skiprows=1, names=_FEATURES + [_target])
-        test[_target] = test[_target].str[:-1]
+        test[_target] = test[_target].str.rstrip('.')
 
         if data_format == 'Dataset':
             train = Dataset(train, label=_target, cat_features=_CAT_FEATURES)
