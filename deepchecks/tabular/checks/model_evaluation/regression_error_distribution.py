@@ -89,11 +89,10 @@ class RegressionErrorDistribution(SingleDatasetCheck):
                                    n_largest_diff], axis=1)
 
             n_smallest_diff = diff.nsmallest(self.n_top_samples)
-            n_smallest_diff.name = str(dataset.label_name) + ' Prediction Difference'
-            n_smallest = pd.concat([dataset.data.loc[n_smallest_diff.index], y_pred.loc[n_smallest_diff.index],
+            n_smallest_diff_values = pd.concat([dataset.data.loc[n_smallest_diff.index], y_pred.loc[n_smallest_diff.index],
                                     n_smallest_diff], axis=1)
             fig = px.histogram(
-                x=diff.values,
+                x=n_smallest_diff_values.values,
                 nbins=self.n_bins,
                 title='Regression Error Distribution',
                 labels={'x': f'{dataset.label_name} prediction error', 'y': 'Count'},
