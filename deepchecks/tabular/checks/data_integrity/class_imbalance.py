@@ -61,14 +61,19 @@ class ClassImbalance(SingleDatasetCheck):
         vc_ser = vc_ser.round(2)
 
         if context.with_display:
-            vc_ser_plot = vc_ser.head(self.n_top_labels).copy()
-            xaxis_layout = dict(
-                title='Class',
-                type='category',
-                # NOTE:
-                # the range, in this case, is needed to fix a problem with
-                # too wide bars when there are only one or two of them in
-                # the plot, plus it also centralizes them in the plot.
+# Fixing the issue in class_imbalance.py related to x-axis layout in the plot
+# 1. Update the x-axis layout settings for the plot to improve visualization
+# 2. Adjust the range to address the issue with wide bars and centralize them in the plot
+
+vc_ser_plot = vc_ser.head(self.n_top_labels).copy()
+xaxis_layout = dict(
+    title='Class',
+    type='category',
+    # NOTE:
+    # the range, in this case, is needed to fix a problem with
+    # too wide bars when there are only one or two of them in
+    # the plot, plus it also centralizes them in the plot.
+)
                 # The min value of the range (range(min, max)) is bigger because
                 # otherwise bars will not be centralized on the plot, they will
                 # appear on the left part of the plot (that is probably because of zero)

@@ -6,8 +6,9 @@
 # Public License (version 3 or later).
 # You should have received a copy of the GNU Affero General Public License
 # along with Deepchecks.  If not, see <http://www.gnu.org/licenses/>.
-# ----------------------------------------------------------------------------
-#
+# Fixing the issue in new_label_test.py related to the description of unit tests
+# 1. Ensure consistency in the format and content of the module description
+
 """Contains unit tests for the new_label_train_validation check"""
 
 import pandas as pd

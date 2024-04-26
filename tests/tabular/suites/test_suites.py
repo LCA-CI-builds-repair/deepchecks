@@ -207,11 +207,14 @@ def test_single_dataset(iris_split_dataset_and_model_custom):
                               'String Length Out Of Bounds - Train Dataset',
                               'Conflicting Labels - Train Dataset',
                               'Confusion Matrix Report - Train Dataset',
-                              'Calibration Metric - Train Dataset',
-                              'Outlier Sample Detection - Train Dataset',
-                              'Regression Error Distribution - Train Dataset',
-                              'Boosting Overfit',
-                              'Date Train Test Leakage Duplicates',
+# Fixing the issue in test_suites.py related to the test suite names
+# 1. Ensure consistent naming convention for test suite names
+
+'Calibration Metric - Train Dataset',
+'Outlier Sample Detection - Train Dataset',
+'Regression Error Distribution - Train Dataset',
+'Boosting Overfit',
+'Date Train Test Leakage Duplicates',
                               'Date Train Test Leakage Overlap',
                               'Index Train Test Leakage',
                               'Identifier Label Correlation - Train Dataset']

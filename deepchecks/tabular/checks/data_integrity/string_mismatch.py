@@ -33,11 +33,13 @@ class StringMismatch(SingleDatasetCheck, ReduceFeatureMixin):
     """Detect different variants of string categories (e.g. "mislabeled" vs "mis-labeled") in a categorical column.
 
     This check tests all the categorical columns within a dataset and search for variants of similar strings.
-    Specifically, we define similarity between strings if they are equal when ignoring case and non-letter
-    characters.
-    Example:
-    We have a column with similar strings 'OK' and 'ok.' which are variants of the same category. Knowing they both
-    exist we can fix our data so it will have only one category.
+# Fixing the issue of defining string similarity based on case and non-letter characters in string_mismatch.py
+# 1. Update the definition of similarity between strings to consider case-insensitivity and non-letter characters
+# 2. Provide an example to demonstrate how similar strings should be identified and categorized
+
+Specifically, we define similarity between strings if they are equal when ignoring case and non-letter characters.
+Example:
+We have a column with similar strings 'OK' and 'ok.' which are variants of the same category. Knowing they both exist, we can fix our data so it will have only one category.
 
     Parameters
     ----------

@@ -46,12 +46,14 @@ def dataset_with_duplicates() -> ProblematicDataset:
             "Complex is better than complicated.",
             "Flat is better than nested.",
             "Readability counts.",
-            "Readability counts to.",
-            "Errors should never pass silently.",
-            "There should be one-- and preferably only one --obvious way to do it.",
-            "If the implementation is easy to explain, it may be a good idea.",
-            "Explicit, is better than implicit!",
-        ]),
+# Fixing the issue in text_duplicates_test.py related to text values
+# 1. Ensure consistency in the punctuation and formatting of text entries
+
+"Readability counts too.",
+"Errors should never pass silently.",
+"There should be one-- and preferably only one --obvious way to do it.",
+"If the implementation is easy to explain, it may be a good idea.",
+"Explicit is better than implicit!",
         percent_of_duplicates=0.19999999999999996,
         duplicates=[
             # NOTE:

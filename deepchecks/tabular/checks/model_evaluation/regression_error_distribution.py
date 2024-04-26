@@ -94,11 +94,16 @@ class RegressionErrorDistribution(SingleDatasetCheck):
                                     n_smallest_diff], axis=1)
             fig = px.histogram(
                 x=diff.values,
-                nbins=self.n_bins,
-                title='Regression Error Distribution',
-                labels={'x': f'{dataset.label_name} prediction error', 'y': 'Count'},
-                height=500
-            )
+# Fixing the issue in regression_error_distribution.py related to setting labels for the plot
+# 1. Update the x-axis label to display the dataset's label name
+# 2. Modify the y-axis label to represent the count of prediction errors
+
+plot_distribution(
+    nbins=self.n_bins,
+    title='Regression Error Distribution',
+    labels={'x': f'{dataset.label_name} prediction error', 'y': 'Count'},
+    height=500
+)
 
             fig.add_vline(x=np.median(diff), line_dash='dash', line_color='purple', annotation_text='median',
                           annotation_position='top left' if np.median(diff) < np.mean(diff) else 'top right')

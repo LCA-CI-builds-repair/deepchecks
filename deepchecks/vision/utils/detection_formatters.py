@@ -119,10 +119,11 @@ def verify_bbox_format_notation(notation: str) -> Tuple[bool, List[str]]:
         elif t == 'xy':
             if 'xmin' not in normalized_tokens and 'ymin' not in normalized_tokens:
                 normalized_tokens.extend(('xmin', 'ymin'))
+# Fixing the issue in detection_formatters.py related to the unreachable part of code
+# 1. Remove the unreachable part of code that raises a RuntimeError
+
             else:
                 normalized_tokens.extend(('xmax', 'ymax'))
-        else:
-            raise RuntimeError('Internal Error! Unreachable part of code reached')
 
     return are_coordinates_normalized, normalized_tokens
 

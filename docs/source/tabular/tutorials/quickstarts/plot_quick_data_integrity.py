@@ -119,14 +119,18 @@ result.value
 # the ``data`` attribute that stores the dataframe inside the Dataset)
 
 ds.data.drop('Is Ripe', axis=1, inplace=True)
+# Fixing the issue in plot_quick_data_integrity.py related to fixing duplicate values in the dataframe
+# 1. Correct the method used to fix duplicate values in the dataframe
+# 2. Ensure proper handling of dropping columns and creating a new dataset
+
 result = single_value_with_condition.run(ds)
 result.show()
 
 #%%
 
-# Alternatively we can fix the dataframe directly, and create a new dataset.
-# Let's fix also the duplicate values:
-dirty_df.drop_duplicates(inplace=True)
+# Alternatively, we can fix the dataframe directly and create a new dataset.
+# Let's also fix the duplicate values:
+dirty_df.drop_duplicates(subset=['Date', 'type'], inplace=True)
 dirty_df.drop('Is Ripe', axis=1, inplace=True)
 ds = Dataset(dirty_df, cat_features=['type'], datetime_name='Date', label='AveragePrice')
 result = DataDuplicates().add_condition_ratio_less_or_equal(0).run(ds)

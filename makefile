@@ -211,7 +211,11 @@ validate: pylint docstring
 
 pylint: dev-requirements
 	$(ANALIZE) $(SOURCES)
-	$(ANALIZE) $(TEST_CODE) --ignore-paths='.*\/checks\/.+$\'
+# Fixing the issue in the makefile related to ignoring paths during code analysis
+# 1. Correct the misspelling of "ANALIZE" to "ANALYZE"
+# 2. Update the regular expression in --ignore-paths to properly exclude paths containing 'checks'
+
+	$(ANALYZE) $(TEST_CODE) --ignore-paths='.*\/checks\/.+$'
 	$(FLAKE8) $(SOURCES)
 	$(FLAKE8_RST) $(SOURCES)
 

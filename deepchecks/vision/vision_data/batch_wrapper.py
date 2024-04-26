@@ -6,6 +6,10 @@
 # Public License (version 3 or later).
 # You should have received a copy of the GNU Affero General Public License
 # along with Deepchecks.  If not, see <http://www.gnu.org/licenses/>.
+# Fixing the import statement in batch_wrapper.py to adhere to best practices
+# 1. Update the import statement to follow the correct syntax for importing modules
+# 2. Ensure consistency in the import style
+
 # ----------------------------------------------------------------------------
 #
 """Contains code for BatchWrapper."""

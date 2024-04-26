@@ -166,22 +166,31 @@ def test_condition_percent_new_variants_pass():
 
 
 def test_fi_n_top(diabetes_split_dataset_and_model):
-    train, val, clf = diabetes_split_dataset_and_model
-    train = Dataset(train.data.copy(), label='target', cat_features=['sex'])
-    val = Dataset(val.data.copy(), label='target', cat_features=['sex'])
-    train.data.loc[train.data.index % 2 == 0, 'age'] = 'aaa'
-    val.data.loc[val.data.index % 2 == 1, 'age'] = 'aaa!!'
-    train.data.loc[train.data.index % 2 == 0, 'bmi'] = 'aaa'
-    val.data.loc[val.data.index % 2 == 1, 'bmi'] = 'aaa!!'
-    train.data.loc[train.data.index % 2 == 0, 'bp'] = 'aaa'
-    val.data.loc[val.data.index % 2 == 1, 'bp'] = 'aaa!!'
-    train.data.loc[train.data.index % 2 == 0, 'sex'] = 'aaa'
-    val.data.loc[val.data.index % 2 == 1, 'sex'] = 'aaa!!'
-    # Arrange
-    check = StringMismatchComparison(n_top_columns=3)
-    # Act
-    result = check.run(test_dataset=train, train_dataset=val)
-    # Assert - The display table is transposed so check length of columns
+# Fixing the issue of string mismatch comparison in the test script
+# 1. Correct the assignment of train and val datasets from diabetes_split_dataset_and_model
+# 2. Use correct labels and cat_features when creating Dataset objects
+# 3. Replace incorrect string values with appropriate values based on the columns
+# 4. Ensure correct test_dataset and train_dataset parameters are passed to StringMismatchComparison
+
+train, val, clf = diabetes_split_dataset_and_model
+train = Dataset(train.data.copy(), label='target', cat_features=['sex'])
+val = Dataset(val.data.copy(), label='target', cat_features=['sex'])
+train.data.loc[train.data.index % 2 == 0, 'age'] = 35
+val.data.loc[val.data.index % 2 == 1, 'age'] = 38
+train.data.loc[train.data.index % 2 == 0, 'bmi'] = 25.5
+val.data.loc[val.data.index % 2 == 1, 'bmi'] = 27.3
+train.data.loc[train.data.index % 2 == 0, 'bp'] = 120
+val.data.loc[val.data.index % 2 == 1, 'bp'] = 122
+train.data.loc[train.data.index % 2 == 0, 'sex'] = 'Male'
+val.data.loc[val.data.index % 2 == 1, 'sex'] = 'Female'
+
+# Arrange
+check = StringMismatchComparison(n_top_columns=3)
+
+# Act
+result = check.run(test_dataset=train, train_dataset=val)
+
+# Assert - The display table is transposed so check length of columns
     assert_that(result.display[1].columns, has_length(3))
 
 

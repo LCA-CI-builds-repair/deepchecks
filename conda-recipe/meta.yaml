@@ -72,22 +72,25 @@ requirements:
     - jsonpickle >=2.1.0
 
 test:
-  imports:
-    - deepchecks
-    - deepchecks.base
-    - deepchecks.checks
-    - deepchecks.checks.distribution
-    - deepchecks.checks.integrity
-    - deepchecks.checks.methodology
-    - deepchecks.checks.overview
-    - deepchecks.checks.performance
-    - deepchecks.datasets
-    - deepchecks.datasets.regression
-    - deepchecks.suites
-    - deepchecks.utils
-    - tests
-    - tests.checks
-    - tests.checks.distribution
-    - tests.suites
-    - tests.utils
+# Fixing the issue in meta.yaml related to the imports
+# 1. Ensure consistent and organized import statements for deepchecks and tests modules
+
+imports:
+  - deepchecks
+  - deepchecks.base
+  - deepchecks.checks
+  - deepchecks.checks.distribution
+  - deepchecks.checks.integrity
+  - deepchecks.checks.methodology
+  - deepchecks.checks.overview
+  - deepchecks.checks.performance
+  - deepchecks.datasets
+  - deepchecks.datasets.regression
+  - deepchecks.suites
+  - deepchecks.utils
+  - tests
+  - tests.checks
+  - tests.checks.distribution
+  - tests.suites
+  - tests.utils
 

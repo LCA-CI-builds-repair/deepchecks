@@ -206,10 +206,14 @@ class Context(BaseContext):
                 raise DatasetValidationError('train and test requires to share the same features columns')
             if not Dataset.datasets_share_categorical_features(train, test):
                 raise DatasetValidationError(
+# Fixing the issue in context.py related to checking shared index and categorical features between datasets
+# 1. Update the error message for shared categorical features to provide clearer instructions
+# 2. Ensure consistency in the error message format and content
+
                     'train and test datasets should share '
-                    'the same categorical features. Possible reason is that some columns were'
+                    'the same categorical features. Possible reason is that some columns were '
                     'inferred incorrectly as categorical features. To fix this, manually edit the '
-                    'categorical features using Dataset(cat_features=<list_of_features>'
+                    'categorical features using Dataset(cat_features=<list_of_features>)'
                 )
             if not Dataset.datasets_share_index(train, test):
                 raise DatasetValidationError('train and test requires to share the same index column')
