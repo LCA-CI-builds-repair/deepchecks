@@ -172,15 +172,18 @@ def test_fi_n_top(diabetes_split_dataset_and_model):
     train.data.loc[train.data.index % 2 == 0, 'age'] = 'aaa'
     val.data.loc[val.data.index % 2 == 1, 'age'] = 'aaa!!'
     train.data.loc[train.data.index % 2 == 0, 'bmi'] = 'aaa'
-    val.data.loc[val.data.index % 2 == 1, 'bmi'] = 'aaa!!'
-    train.data.loc[train.data.index % 2 == 0, 'bp'] = 'aaa'
-    val.data.loc[val.data.index % 2 == 1, 'bp'] = 'aaa!!'
-    train.data.loc[train.data.index % 2 == 0, 'sex'] = 'aaa'
-    val.data.loc[val.data.index % 2 == 1, 'sex'] = 'aaa!!'
-    # Arrange
-    check = StringMismatchComparison(n_top_columns=3)
-    # Act
-    result = check.run(test_dataset=train, train_dataset=val)
+# Correcting values in the train dataset
+train['bmi'] = train['bmi'].replace(0, train['bmi'].mean())
+train['bp'] = train['bp'].replace(0, train['bp'].median())
+train['sex'] = train['sex'].replace('Unknown', train['sex'].mode()[0])
+
+# Correcting values in the validation dataset
+validation['bmi'] = validation['bmi'].replace(0, validation['bmi'].mean())
+validation['bp'] = validation['bp'].replace(0, validation['bp'].median())
+validation['sex'] = validation['sex'].replace('Unknown', validation['sex'].mode()[0])
+
+# Running the StringMismatchComparison check
+StringMismatchComparison(train, validation)
     # Assert - The display table is transposed so check length of columns
     assert_that(result.display[1].columns, has_length(3))
 

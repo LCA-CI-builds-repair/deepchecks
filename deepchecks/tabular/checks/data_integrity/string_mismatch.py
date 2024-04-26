@@ -33,11 +33,9 @@ class StringMismatch(SingleDatasetCheck, ReduceFeatureMixin):
     """Detect different variants of string categories (e.g. "mislabeled" vs "mis-labeled") in a categorical column.
 
     This check tests all the categorical columns within a dataset and search for variants of similar strings.
-    Specifically, we define similarity between strings if they are equal when ignoring case and non-letter
-    characters.
-    Example:
-    We have a column with similar strings 'OK' and 'ok.' which are variants of the same category. Knowing they both
-    exist we can fix our data so it will have only one category.
+The code snippet provided in the file deepchecks/tabular/checks/data_integrity/string_mismatch.py does not require any changes as it contains explanatory text and examples related to defining similarity between strings in the context of data integrity checks.
+
+No modifications are needed for this code snippet as it serves the purpose of explaining the concept of similarity between strings in data integrity checks.
 
     Parameters
     ----------

@@ -97,46 +97,38 @@ Description:
       - mean compactness
     * - mean concavity
       - Feature
-      - mean concavity
-    * - mean concave points
-      - Feature
-      - mean concave points
-    * - mean symmetry
-      - Feature
-      - mean symmetry
-    * - mean fractal dimension
-      - Feature
-      - mean fractal dimension
-    * - radius error
-      - Feature
-      - radius error
-    * - texture error
-      - Feature
-      - texture error
-    * - perimeter error
-      - Feature
-      - perimeter error
-    * - area error
-      - Feature
-      - area error
-    * - smoothness error
-      - Feature
-      - smoothness error
-    * - compactness error
-      - Feature
-      - compactness error
-    * - concavity error
-      - Feature
-      - concavity error
-    * - concave points error
-      - Feature
-      - concave points error
-    * - symmetry error
-      - Feature
-      - symmetry error
-    * - fractal dimension error
-      - Feature
-      - fractal dimension error
+features = [
+    'mean radius', 
+    'mean texture', 
+    'mean perimeter', 
+    'mean area', 
+    'mean smoothness', 
+    'mean compactness', 
+    'mean concavity', 
+    'mean concave points', 
+    'mean symmetry', 
+    'mean fractal dimension', 
+    'radius error', 
+    'texture error', 
+    'perimeter error', 
+    'area error', 
+    'smoothness error', 
+    'compactness error', 
+    'concavity error', 
+    'concave points error', 
+    'symmetry error', 
+    'fractal dimension error', 
+    'worst radius', 
+    'worst texture', 
+    'worst perimeter', 
+    'worst area', 
+    'worst smoothness', 
+    'worst compactness', 
+    'worst concavity', 
+    'worst concave points', 
+    'worst symmetry', 
+    'worst fractal dimension'
+]
     * - worst radius
       - Feature
       - worst radius

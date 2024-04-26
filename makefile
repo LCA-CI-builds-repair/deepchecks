@@ -211,7 +211,7 @@ validate: pylint docstring
 
 pylint: dev-requirements
 	$(ANALIZE) $(SOURCES)
-	$(ANALIZE) $(TEST_CODE) --ignore-paths='.*\/checks\/.+$\'
+--ignore-paths='.*\/checks\/.*'
 	$(FLAKE8) $(SOURCES)
 	$(FLAKE8_RST) $(SOURCES)
 

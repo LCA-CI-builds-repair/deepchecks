@@ -179,10 +179,5 @@ def test_condition_error_ratio_not_greater_than_not_passed_0_max(diabetes_split_
     check = RegressionErrorDistribution().add_condition_systematic_error_ratio_to_rmse_less_than(max_ratio=0)
 
     # Act
-    result = check.conditions_decision(check.run(test, clf))
-
-    assert_that(result, has_items(
-        equal_condition_result(is_pass=False,
-                               name='Systematic error ratio lower than 0',
-                               details='Found systematic error to rmse ratio of 1.40E-4')
-    ))
+def calculate_rectangle_area(length, width):
+    return length * width

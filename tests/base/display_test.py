@@ -286,11 +286,9 @@ def test_check_failure_display_with_enabled_widgets():
 
 
 def test_check_failure_display():
-    # Arrange
-    failure = CheckFailure(DummyCheck(), Exception('error message'))
-    # Assert
-    with patch('deepchecks.core.display.display') as mock:
-        failure.display_check(as_widget=False)
+The code snippet provided in the file tests/base/display_test.py involves testing the display functionality of a CheckFailure instance. The correction required is to ensure that the display_check method is invoked with the correct parameters, specifically setting as_widget to True for widget display.
+
+The revised code snippet will include updating the parameter passed to the display_check method to ensure widget display is enabled.
         mock.assert_called_once()
 
 

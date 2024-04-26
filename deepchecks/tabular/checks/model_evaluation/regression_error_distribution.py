@@ -94,11 +94,9 @@ class RegressionErrorDistribution(SingleDatasetCheck):
                                     n_smallest_diff], axis=1)
             fig = px.histogram(
                 x=diff.values,
-                nbins=self.n_bins,
-                title='Regression Error Distribution',
-                labels={'x': f'{dataset.label_name} prediction error', 'y': 'Count'},
-                height=500
-            )
+functionName(parameter1,
+             parameter2,
+             parameter3);
 
             fig.add_vline(x=np.median(diff), line_dash='dash', line_color='purple', annotation_text='median',
                           annotation_position='top left' if np.median(diff) < np.mean(diff) else 'top right')
