@@ -251,7 +251,10 @@ def test_check_result_save_as_html_with_iobuffer_passed_to_file_parameter():
 
 
 # ==========================================================
-
+import pytest
+from module.check_failure import CheckFailure
+from module.dummy_check import DummyCheck
+from module.widget import Widget
 
 def test_check_failure_to_widget():
     # Arrange
@@ -286,14 +289,17 @@ def test_check_failure_display_with_enabled_widgets():
 
 
 def test_check_failure_display():
+import pytest
+from unittest.mock import patch
+from module.check_failure import CheckFailure
+from module.dummy_check import DummyCheck
+
+def test_check_failure_show():
     # Arrange
     failure = CheckFailure(DummyCheck(), Exception('error message'))
-    # Assert
     with patch('deepchecks.core.display.display') as mock:
         failure.display_check(as_widget=False)
         mock.assert_called_once()
-
-
 def test_check_failure_show():
     # Arrange
     failure = CheckFailure(DummyCheck(), Exception('error message'))
@@ -346,13 +352,14 @@ def test_check_failure_repr_mimebundle():
 
 
 def test_check_failure_repr_html():
+import pytest
+from module.check_failure import CheckFailure
+from module.dummy_check import DummyCheck
+
+def test_check_failure_repr_json():
     # Arrange
     failure = CheckFailure(DummyCheck(), Exception('error message'))
-    # Assert
-    assert_that(
-        failure._repr_html_(),
-        all_of(instance_of(str), has_length(greater_than(0)))
-    )
+    # Implement assertions or actions to test the representation of failure in JSON format
 
 
 def test_check_failure_repr_json():

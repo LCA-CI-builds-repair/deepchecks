@@ -359,13 +359,11 @@ def _import_object_from_name(module_name, fullname):
 _top_modules = ['deepchecks']
 _source_root = None
 
-
 def _find_source_root(source_abs_path):
-    # Note that READTHEDOCS* environment variable cannot be used, because they
-    # are not set under the CI environment.
     global _source_root
     if _source_root is not None:
         return _source_root
+    # Add logic to find the source root based on the provided source_abs_path
 
     assert os.path.isfile(source_abs_path)
     dirname = os.path.dirname(source_abs_path)
