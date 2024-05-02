@@ -98,25 +98,18 @@ Description:
     * - mean concavity
       - Feature
       - mean concavity
-    * - mean concave points
       - Feature
       - mean concave points
-    * - mean symmetry
       - Feature
       - mean symmetry
-    * - mean fractal dimension
       - Feature
       - mean fractal dimension
-    * - radius error
       - Feature
       - radius error
-    * - texture error
       - Feature
       - texture error
-    * - perimeter error
       - Feature
       - perimeter error
-    * - area error
       - Feature
       - area error
     * - smoothness error
