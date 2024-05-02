@@ -116,7 +116,6 @@ result.value
 # architectural limitations of ``matplotlib``.
 #
 # *Good to know: ``display`` can receive a single object to display or a list of objects*
-
 import matplotlib.pyplot as plt
 
 from deepchecks.core import CheckResult
