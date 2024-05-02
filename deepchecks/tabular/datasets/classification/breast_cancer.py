@@ -137,6 +137,7 @@ Description:
     * - fractal dimension error
       - Feature
       - fractal dimension error
+      - fractal dimension error
     * - worst radius
       - Feature
       - worst radius
