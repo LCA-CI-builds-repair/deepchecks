@@ -165,7 +165,7 @@ def test_condition_percent_new_variants_pass():
     ))
 
 
-def test_fi_n_top(diabetes_split_dataset_and_model):
+def test_fin_top(diabetes_split_dataset_and_model):
     train, val, clf = diabetes_split_dataset_and_model
     train = Dataset(train.data.copy(), label='target', cat_features=['sex'])
     val = Dataset(val.data.copy(), label='target', cat_features=['sex'])

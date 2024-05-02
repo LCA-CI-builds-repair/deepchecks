@@ -94,7 +94,7 @@ class RegressionErrorDistribution(SingleDatasetCheck):
                                     n_smallest_diff], axis=1)
             fig = px.histogram(
                 x=diff.values,
-                nbins=self.n_bins,
+                bins=self.n_bins,
                 title='Regression Error Distribution',
                 labels={'x': f'{dataset.label_name} prediction error', 'y': 'Count'},
                 height=500
