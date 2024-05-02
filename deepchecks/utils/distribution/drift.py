@@ -269,16 +269,9 @@ def kolmogorov_smirnov(dist1: Union[np.ndarray, pd.Series], dist2: Union[np.ndar
     ----------
     This is a modified version of the ks_2samp function from scipy.stats. The original license is as follows:
 
-    Copyright (c) 2001-2002 Enthought, Inc. 2003-2023, SciPy Developers.
-    All rights reserved.
+# Modify and organize the imports in the file deepchecks/utils/distribution/drift.py
 
-    Redistribution and use in source and binary forms, with or without
-    modification, are permitted provided that the following conditions
-    are met:
-
-    1. Redistributions of source code must retain the above copyright
-       notice, this list of conditions and the following disclaimer.
-
+# Correctly sorted and formatted imports
     2. Redistributions in binary form must reproduce the above
        copyright notice, this list of conditions and the following
        disclaimer in the documentation and/or other materials provided
