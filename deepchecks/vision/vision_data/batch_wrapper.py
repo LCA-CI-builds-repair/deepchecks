@@ -10,7 +10,6 @@
 #
 """Contains code for BatchWrapper."""
 from typing import Dict, List, Optional, Union
-
 import numpy as np
 
 from deepchecks.core.errors import DeepchecksProcessError
