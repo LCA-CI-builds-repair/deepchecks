@@ -168,13 +168,13 @@ def calculate_builtin_embeddings(text: np.array, model: str = 'miniLM',
 
             chunk_embeddings_output = []
             for sub_list in tqdm([filtered_chunked_texts[x:x + open_ai_batch_size]
-                                  for x in range(0, len(filtered_chunked_texts), open_ai_batch_size)],
-                                 desc='Calculating Embeddings '):
-                chunk_embeddings_output.extend(_get_embedding_with_backoff(sub_list, model=model_name))
-            chunk_embeddings = [embedding['embedding'] for embedding in chunk_embeddings_output]
+for x in tqdm([filtered_chunked_texts[x:x + open_ai_batch_size] for x in range(0, len(filtered_chunked_texts), open_ai_batch_size)],
+             desc='Calculating Embeddings '):
+    chunk_embeddings_output.extend(_get_embedding_with_backoff(sub_list, model=model_name))
+chunk_embeddings = [embedding['embedding'] for embedding in chunk_embeddings_output]
 
-            result_embeddings = []
-            idx = 0
+result_embeddings = []
+idx = 0
             for i, tokens_in_sample in enumerate(encoded_texts):
                 # If the sample was too long and long_sample_averaging is set to nan, we skip it
                 # and return a vector of nans. Otherwise, we average the embeddings of the chunks.
@@ -196,18 +196,18 @@ def calculate_builtin_embeddings(text: np.array, model: str = 'miniLM',
                     else:
                         text_embedding = np.average(text_embeddings, axis=0, weights=text_lens)
                         text_embedding = text_embedding / np.linalg.norm(text_embedding)  # normalizes length to 1
-                result_embeddings.append(text_embedding.tolist())
+                    result_embeddings.append(text_embedding.tolist())
 
-            return result_embeddings
+                return result_embeddings
 
-        clean_text = [_clean_special_chars(x) for x in text]
-        embeddings = len_safe_get_embedding(clean_text)
-    else:
-        raise ValueError(f'Unknown model type: {model}')
-    embeddings = np.array(embeddings).astype(np.float16)
-    if file_path is not None:
-        np.save(file_path, embeddings)
-    return embeddings
+            clean_text = [_clean_special_chars(x) for x in text]
+            embeddings = len_safe_get_embedding(clean_text)
+        else:
+            raise ValueError(f'Unknown model type: {model}')
+        embeddings = np.array(embeddings).astype(np.float16)
+        if file_path is not None:
+            np.save(file_path, embeddings)
+        return embeddings
 
 
 def _clean_special_chars(text: str) -> str:
