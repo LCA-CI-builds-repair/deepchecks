@@ -155,7 +155,7 @@ def test_condition_no_variants_fail():
             details='Found 1 out of 1 columns with amount of variants above threshold: '
                     '{\'col1\': [\'deep\', \'foo\']}',
             category=ConditionCategory.WARN)
-    ))
+    )
 
 
 def test_condition_no_variants_pass():
