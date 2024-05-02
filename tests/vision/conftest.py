@@ -34,7 +34,6 @@ from deepchecks.vision.vision_data.utils import set_seeds
 # Fix bug with torch.hub path on windows
 PROJECT_DIR = pathlib.Path(__file__).absolute().parent.parent.parent
 torch.hub.set_dir(str(PROJECT_DIR))
-
 __all__ = ['device',
            'seed_setup',
            'mnist_iterator_visiondata_train',

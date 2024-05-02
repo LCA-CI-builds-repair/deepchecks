@@ -135,9 +135,8 @@ class SimpleModelComparison(TrainTestCheck):
             prediction = batch.numpy_predictions
             for _, metric in self._test_scorers.items():
                 metric.update((prediction, label))
-
             # calculating perfect scores
-            perfect_predictions = np.zeros((len(label), len(prediction[0])))
+            perfect_predictions = np.zeros((len(label), len(prediction[0]))
             perfect_predictions[np.arange(len(label)), label] = 1
             perfect_predictions = list(perfect_predictions)
             for _, metric in self._perfect_scorers.items():

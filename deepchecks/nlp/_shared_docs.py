@@ -33,10 +33,7 @@ The accepted formats for providing model predictions and probabilities are detai
 - predictions - A sequence of sequences with each element containing a binary vector denoting the presence of
   the i-th class for the given sample. Each such vector should have one binary indicator per class according to
   the class (sorted) order. More than one class can be present for each sample.
-- probabilities - A sequence of sequences with each element containing the vector of class probabilities for
-  each sample. Each such vector should have one probability per class according to the class (sorted) order, and
-  the probabilities should range from 0 to 1 for each sample, but are not required to sum to 1.
-
+- probabilities - A sequence of sequences with each element containing the vector of class probabilities for each sample. Each such vector should have one probability per class according to the class (sorted) order, and the probabilities should range from 0 to 1 for each sample, but are not required to sum to 1.
 **Token Classification**
 
 - predictions - A sequence of sequences, with the inner sequence containing tuples in the following
