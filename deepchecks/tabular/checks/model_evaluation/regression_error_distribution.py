@@ -107,8 +107,8 @@ class RegressionErrorDistribution(SingleDatasetCheck):
 
             display = [
                 fig,
-                'Largest over estimation errors:', n_largest,
-                'Largest under estimation errors:', n_smallest
+                ['Largest over estimation errors:', n_largest],
+                ['Largest under estimation errors:', n_smallest]
             ]
         else:
             display = None
