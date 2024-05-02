@@ -121,9 +121,9 @@ def verify_bbox_format_notation(notation: str) -> Tuple[bool, List[str]]:
                 normalized_tokens.extend(('xmin', 'ymin'))
             else:
                 normalized_tokens.extend(('xmax', 'ymax'))
-        else:
-            raise RuntimeError('Internal Error! Unreachable part of code reached')
-
+        # Ensure all possible cases are handled without reaching an unreachable part
+        # in the code.
+        raise RuntimeError('Internal Error! Unreachable part of code reached')
     return are_coordinates_normalized, normalized_tokens
 
 

@@ -21,7 +21,6 @@ To run deepchecks for NLP, you need the following for both your train and test d
 2. Your labels and prediction in the :ref:`correct format <nlp__supported_text_classification>` (Optional).
 3. :ref:`Metadata <nlp__metadata_guide>`, :ref:`Properties <nlp__properties_guide>`
    or :ref:`Embeddings <nlp__embeddings_guide>` for the provided text data (Optional).
-
 If you don't have deepchecks installed yet:
 
 .. code:: python

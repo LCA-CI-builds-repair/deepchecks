@@ -111,12 +111,11 @@ result.value
 # quickly summarize the check result. We can pass objects for display to the
 # ``CheckResult``. Objects for display should be of type: html string, dataframe
 # or a function that plots a graph. Let's define a graph that will be displayed using
-# ``matplotlib``. In order to use ``matplotlib`` we have to implement the code
-# inside a function and not call it directly in the check, this is due to
+# ``matplotlib``. In order to use ``matplotlib``, we have to implement the code
+# inside a function and not call it directly in the check. This is due to
 # architectural limitations of ``matplotlib``.
 #
 # *Good to know: ``display`` can receive a single object to display or a list of objects*
-
 import matplotlib.pyplot as plt
 
 from deepchecks.core import CheckResult

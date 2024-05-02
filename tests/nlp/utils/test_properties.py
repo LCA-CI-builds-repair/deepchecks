@@ -56,7 +56,6 @@ def text_data_fixture():
     return text_data
 
 
-# TODO: Fix test (problem with pytorch versions)
 # @patch('deepchecks.nlp.utils.text_properties.run_available_kwargs', mock_fn)
 # def test_that_warning_is_shown_for_big_datasets():
 #     # Arrange
