@@ -197,16 +197,12 @@ def calculate_builtin_embeddings(text: np.array, model: str = 'miniLM',
                         text_embedding = np.average(text_embeddings, axis=0, weights=text_lens)
                         text_embedding = text_embedding / np.linalg.norm(text_embedding)  # normalizes length to 1
                 result_embeddings.append(text_embedding.tolist())
+        return result_embeddings
 
-            return result_embeddings
-
-        clean_text = [_clean_special_chars(x) for x in text]
-        embeddings = len_safe_get_embedding(clean_text)
-    else:
-        raise ValueError(f'Unknown model type: {model}')
-    embeddings = np.array(embeddings).astype(np.float16)
-    if file_path is not None:
-        np.save(file_path, embeddings)
+clean_text = [_clean_special_chars(x) for x in text]
+embeddings = len_safe_get_embedding(clean_text)
+if file_path is not None:
+    np.save(file_path, embeddings)
     return embeddings
 
 
