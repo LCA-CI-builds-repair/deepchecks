@@ -125,5 +125,5 @@ result.results[check_idx]
 # classes "Forest" and "SeaLake" (the same culprits from the Similar Image Leakage condition), the contrast is a
 # great predictor, but only in the training data! This means we have a critical problem - or model may learn to
 # classify these classes using only the contrast, without actually learning anything about the image content. We can
-# now go on and fix this issue (perhaps by adding train augmentations, or enriching our training set), before we
+# now go on and fix this issue (perhaps by adding train augmentations, or enriching our training set), before we.
 # have even trained a model on this task.

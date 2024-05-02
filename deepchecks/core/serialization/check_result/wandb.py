@@ -157,8 +157,6 @@ class DisplayItemsHandler(ABCDisplayItemsHandler):
             import PIL.Image as pilimage
         except ImportError as error:
             raise ImportError(
-                'Wandb CheckResultSerializer requires the PIL package '
-                'to process matplot figures. To get it, run "pip install pillow".'
             ) from error
         else:
             images = super().handle_callable(item, index, **kwargs)

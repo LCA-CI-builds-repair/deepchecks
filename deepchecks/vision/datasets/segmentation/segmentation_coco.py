@@ -248,6 +248,9 @@ class CocoSegmentationDataset(VisionDataset):
                 masks = torch.empty((0, 3))
 
         # Fake grayscale to rgb because model can't process grayscale:
+import torch
+import numpy as np
+
         if image.shape[0] == 1:
             image = torch.stack([image[0], image[0], image[0]])
 
@@ -259,9 +262,9 @@ class CocoSegmentationDataset(VisionDataset):
             ret_label += classes[i] * mask
 
         return image, torch.as_tensor(ret_label)
+import os
+import contextlib
 
-    def __len__(self):
-        """Return the number of images in the dataset."""
         return len(self.images)
 
     @classmethod
@@ -278,6 +281,9 @@ class CocoSegmentationDataset(VisionDataset):
                 download_and_extract_archive(
                     url,
                     download_root=str(root),
+                download_and_extract_archive(
+                    url,
+                    download_root=str(root),
                     extract_root=str(extract_dir),
                     filename='coco128-segments.zip'
                 )
@@ -288,12 +294,6 @@ class CocoSegmentationDataset(VisionDataset):
             except:  # pylint: disable=bare-except # noqa
                 pass
         return CocoSegmentationDataset(coco_dir, folder, train=train, transforms=A.Compose([ToTensorV2()]),
-                                       test_mode=test_mode)
-
-
-# COCO label map:
-_ORIG_LABEL_MAP = {
-    0: 'person',
     1: 'bicycle',
     2: 'car',
     3: 'motorcycle',
@@ -377,6 +377,12 @@ _ORIG_LABEL_MAP = {
 
 # Pascal VOC label map:
 LABEL_MAP = {0: 'background', 1: 'airplane', 2: 'bicycle', 3: 'bird', 4: 'boat', 5: 'bottle', 6: 'bus', 7: 'car',
+             8: 'cat', 9: 'chair', 10: 'cow', 11: 'dining table', 12: 'dog', 13: 'horse', 14: 'motorcycle',
+             15: 'person', 16: 'potted plant', 17: 'sheep', 18: 'couch', 19: 'train', 20: 'tv'}
+
+COCO_TO_PASCAL_VOC = {
+    # None: 0,  # background
+    4: 1,  # airplane,
              8: 'cat', 9: 'chair', 10: 'cow', 11: 'dining table', 12: 'dog', 13: 'horse', 14: 'motorcycle',
              15: 'person', 16: 'potted plant', 17: 'sheep', 18: 'couch', 19: 'train', 20: 'tv'}
 

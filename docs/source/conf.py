@@ -365,6 +365,7 @@ def _find_source_root(source_abs_path):
     # are not set under the CI environment.
     global _source_root
     if _source_root is not None:
+        pass  # Add your logic here if needed
         return _source_root
 
     assert os.path.isfile(source_abs_path)
