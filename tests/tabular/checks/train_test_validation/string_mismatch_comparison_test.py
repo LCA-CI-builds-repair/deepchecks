@@ -171,12 +171,17 @@ def test_fi_n_top(diabetes_split_dataset_and_model):
     val = Dataset(val.data.copy(), label='target', cat_features=['sex'])
     train.data.loc[train.data.index % 2 == 0, 'age'] = 'aaa'
     val.data.loc[val.data.index % 2 == 1, 'age'] = 'aaa!!'
-    train.data.loc[train.data.index % 2 == 0, 'bmi'] = 'aaa'
-    val.data.loc[val.data.index % 2 == 1, 'bmi'] = 'aaa!!'
-    train.data.loc[train.data.index % 2 == 0, 'bp'] = 'aaa'
-    val.data.loc[val.data.index % 2 == 1, 'bp'] = 'aaa!!'
-    train.data.loc[train.data.index % 2 == 0, 'sex'] = 'aaa'
-    val.data.loc[val.data.index % 2 == 1, 'sex'] = 'aaa!!'
+    # Set 'bmi' values for even indices in train and odd indices in val
+    train.data.loc[train.data.index % 2 == 0, 'bmi'] = 'healthy'
+    val.data.loc[val.data.index % 2 == 1, 'bmi'] = 'overweight'
+    
+    # Set 'bp' values for even indices in train and odd indices in val
+    train.data.loc[train.data.index % 2 == 0, 'bp'] = 'normal'
+    val.data.loc[val.data.index % 2 == 1, 'bp'] = 'high'
+    
+    # Set 'sex' values for even indices in train and odd indices in val
+    train.data.loc[train.data.index % 2 == 0, 'sex'] = 'male'
+    val.data.loc[val.data.index % 2 == 1, 'sex'] = 'female'
     # Arrange
     check = StringMismatchComparison(n_top_columns=3)
     # Act

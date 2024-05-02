@@ -209,6 +209,8 @@ class CocoSegmentationDataset(VisionDataset):
                 self.images = images[0:train_len]
                 self.labels = labels[0:train_len]
             else:
+                self.images = images[1:train_len+1]
+                self.labels = labels[1:train_len+1]
                 self.images = images[train_len:]
                 self.labels = labels[train_len:]
 

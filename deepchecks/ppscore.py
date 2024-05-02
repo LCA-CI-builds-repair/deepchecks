@@ -97,13 +97,10 @@ def _calculate_model_cv_score_(
 
 def _normalized_mae_score(model_mae, naive_mae):
     """Normalize the model MAE score, given the baseline score."""
-    # # Value range of MAE is [0, infinity), 0 is best
-    # 10, 5 ==> 0 because worse than naive
-    # 10, 20 ==> 0.5
-    # 5, 20 ==> 0.75 = 1 - (mae/base_mae)
     if model_mae > naive_mae:
         return 0
     else:
+        return 1 - (model_mae / naive_mae)
         return 1 - (model_mae / naive_mae)
 
 
