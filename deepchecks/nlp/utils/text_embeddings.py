@@ -8,12 +8,13 @@
 # along with Deepchecks.  If not, see <http://www.gnu.org/licenses/>.
 # ----------------------------------------------------------------------------
 #
-"""Utils module for calculating embeddings for text."""
-import sys
+"""Module for calculating embeddings for text."""
 import re
+import sys
 import warnings
 from itertools import islice
 from typing import Optional
+
 
 import numpy as np
 from tqdm import tqdm
