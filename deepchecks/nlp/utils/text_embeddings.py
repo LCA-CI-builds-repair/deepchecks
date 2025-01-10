@@ -28,17 +28,10 @@ PATTERN_SPACE_CHARS = re.compile(r'\s')
 PATTERN_BR_CHARS = re.compile(r'<br />')
 
 
-def batched(iterable, n):
-    """Batch data into tuples of length n. The last batch may be shorter."""
-    # batched('ABCDEFG', 3) --> ABC DEF G
-    if n < 1:
-        raise ValueError('n must be at least one')
-    it = iter(iterable)
-    while True:
-        batch = tuple(islice(it, n))
-        if not batch:
-            return
-        yield batch
+def iterate_batched(tokenized_text, chunk_length):
+    """Chunk text into tokens of length chunk_length."""
+    chunks_iterator = batched(tokenized_text, chunk_length)
+    yield from chunks_iterator
 
 
 def encode_text(text, encoding_name):
