@@ -23,7 +23,8 @@ import pandas as pd
 import textblob
 import torch.cuda
 from nltk import corpus
-from nltk import download as nltk_download
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 from nltk import sent_tokenize, word_tokenize
 from tqdm import tqdm
 from typing_extensions import TypedDict
