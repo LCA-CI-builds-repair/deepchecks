@@ -33,12 +33,12 @@ def default_fill_na_per_column_type(df: pd.DataFrame, cat_features: t.Optional[t
     if cat_features is None:
         cat_features = infer_categorical_features(df)
 
-    result = {}
+    result = df.copy()
     for col_name in df.columns:
         modified_col = default_fill_na_series(df[col_name], col_name in cat_features)
         if modified_col is not None:
             result[col_name] = modified_col
-    return pd.DataFrame(result, index=df.index)
+    return result
 
 
 def default_fill_na_series(col: pd.Series, is_cat_column: t.Optional[bool] = None) -> t.Optional[pd.Series]:
