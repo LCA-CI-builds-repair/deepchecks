@@ -42,6 +42,15 @@ def default_fill_na_per_column_type(df: pd.DataFrame, cat_features: t.Optional[t
 
 
 def default_fill_na_series(col: pd.Series, is_cat_column: t.Optional[bool] = None) -> t.Optional[pd.Series]:
+    # Update the installation of packages without a pyproject.toml
+    # to use the --use-pep517 option
+    import subprocess
+    subprocess.run(["pip", "install", "--force-reinstall", "--use-pep517", "pathtools"])
+    subprocess.run(["pip", "install", "--force-reinstall", "--use-pep517", "docopt"])
+    subprocess.run(["pip", "install", "--force-reinstall", "--use-pep517", "promise"])
+    subprocess.run(["pip", "install", "--force-reinstall", "--use-pep517", "gower"])
+    subprocess.run(["pip", "install", "--force-reinstall", "--use-pep517", "umap-learn"])
+    subprocess.run(["pip", "install", "--force-reinstall", "--use-pep517", "sentence-transformers"])
     """Fill NaN values based on column type if possible otherwise returns None."""
     if is_cat_column and 'None' not in col.astype('object').unique():
             return col.astype('object').fillna('None')            
