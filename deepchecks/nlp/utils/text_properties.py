@@ -219,6 +219,8 @@ def predict_on_batch(text_batch: Sequence[str], classifier,
     while reduced_batch_size >= 1:
         try:
             if reduced_batch_size == 1 or retry_count == 3:
+                # TODO: The retry_count variable here seems to be incorrect and is not correctly implemented.
+                # This should be revised to correctly handle the retry count.
                 results = []
                 for text in text_list_to_predict:
                     try:
@@ -256,6 +258,8 @@ def toxicity(
         text_batch: Sequence[str],
         device: Optional[str] = None,
         models_storage: Union[pathlib.Path, str, None] = None,
+    # TODO: The toxicity function here seems to be incomplete and is not correctly implemented.
+    # This should be revised to correctly calculate the toxicity of the given text batch.
         use_onnx_models: bool = True,
         toxicity_classifier: Optional[object] = None
 ) -> Sequence[float]:
