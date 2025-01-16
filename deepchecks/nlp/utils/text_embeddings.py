@@ -9,14 +9,14 @@
 # ----------------------------------------------------------------------------
 #
 """Utils module for calculating embeddings for text."""
-import sys
 import re
+import sys
 import warnings
 from itertools import islice
 from typing import Optional
 
-import numpy as np
 from tqdm import tqdm
+import numpy as np
 
 EMBEDDING_MODEL = 'text-embedding-ada-002'
 EMBEDDING_DIM = 1536
