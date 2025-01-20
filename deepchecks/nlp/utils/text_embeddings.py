@@ -23,6 +23,8 @@ EMBEDDING_DIM = 1536
 EMBEDDING_CTX_LENGTH = 8191
 EMBEDDING_ENCODING = 'cl100k_base'
 
+import numpy as np
+from tqdm import tqdm
 PATTERN_SPECIAL_CHARS = re.compile(r"[!@#$%^&*()_+{}|:\"<>?~`\-=\[\]\;',.\/]")
 PATTERN_SPACE_CHARS = re.compile(r'\s')
 PATTERN_BR_CHARS = re.compile(r'<br />')
