@@ -53,6 +53,7 @@ def encode_text(text, encoding_name):
         return text
 
 
+
 def iterate_batched(tokenized_text, chunk_length):
     """Chunk text into tokens of length chunk_length."""
     chunks_iterator = batched(tokenized_text, chunk_length)
