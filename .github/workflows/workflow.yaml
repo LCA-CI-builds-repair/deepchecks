@@ -10,22 +10,26 @@
 #
 name: Code Style
 
-on:
-  push:
-    branches: [ main ]
-  pull_request: 
-    branches: [ main, nlp-base]
+on: push
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref
+    }}
   cancel-in-progress: true
 
 env:
-  DISABLE_DEEPCHECKS_ANONYMOUS_TELEMETRY: "true"
+  DISABLE_DEEPCHECKS_ANONYMOUS_TELEMETRY: 'true'
+  PIP_INDEX_URL: http://localhost:8629/2023-12-05
+  UV_INDEX_URL: http://localhost:8629/2023-12-05
 
 jobs:
   pylint:
     runs-on: ubuntu-latest
+    services:
+      pypi_wayback:
+        image: ghcr.io/waleko/pypi-wayback
+        ports:
+        - 8629:8080
 
 
     steps:
@@ -43,6 +47,11 @@ jobs:
         sortPaths: deepchecks/
   docstring:
     runs-on: ubuntu-latest
+    services:
+      pypi_wayback:
+        image: ghcr.io/waleko/pypi-wayback
+        ports:
+        - 8629:8080
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.9
@@ -54,9 +63,14 @@ jobs:
 
   license-check:
     runs-on: ubuntu-latest
-    
+    services:
+      pypi_wayback:
+        image: ghcr.io/waleko/pypi-wayback
+        ports:
+        - 8629:8080
+
     needs: docstring
-    
+
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.9
