@@ -15,6 +15,7 @@ import warnings
 from itertools import islice
 from typing import Optional
 
+
 import numpy as np
 from tqdm import tqdm
 
